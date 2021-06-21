@@ -4,9 +4,6 @@ jobs:
   docker_build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
         uses: actions/checkout@v2
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
@@ -23,5 +20,7 @@ jobs:
           GITHUB_PACKAGE_REGISTRY_USERNAME: ${{ secrets.GH_USERNAME }}
           GITHUB_PACKAGE_REGISTRY_PASSWORD: ${{ secrets.GH_TOKEN }}
         run: echo "$GITHUB_PACKAGE_REGISTRY_PASSWORD" |docker login docker.pkg.github.com --username "$GITHUB_PACKAGE_REGISTRY_USERNAME" --password-stdin
+      - name: Push Images to GitHub Package Registry
+        run: docker push docker.pkg.github.com/tmarella/gitdashboard/sample:1.0.0
 
       
