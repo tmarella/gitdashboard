@@ -6,8 +6,11 @@
 
 ## Collaborator
 
-`Bhargava`
-`Sowmya`
+* `Bhargava`
+
+* `Sowmya`
+
+* `Tejaswi`
 
 ## Clone and intial setup
 
