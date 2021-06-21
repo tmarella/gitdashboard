@@ -16,3 +16,10 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: docker build . -t sample:test
+  docker_tag:
+    needs: docker_build
+    runs-on: ubuntu-latest
+    steps:
+      - run: docker images
+      - run: docker tag sample:test docker.pkg.github.com/tmarella/gitdashboard/sample:1.0.0
+      
