@@ -1,0 +1,44 @@
+<h1>Routing
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">
+  Routing is an integral part of any single page application and it allows a user to navigate from one view to the
+  next.
+</p>
+<p>The @angular/router contains the shown terms:</p>
+<ul>
+  <li>Service: This is a global service present inside the Angular Application.</li>
+  <li>State: The state of Router is maintained by Router State.</li>
+  <li>Configuration: It maintains information about all the routing states which is present inside the application.
+  </li>
+  <li>Guard: This is a code that runs whenever the router is activated, deactivated or loaded.</li>
+  <li>Snapshot: It will provide access to state and data for a particular route node.</li>
+  <li>Resolver: The script that will fetch data before the requested page is initiated.</li>
+  <li>Outler: This is the location in DOM for router outlet to place it’s components.</li>
+</ul>
+<h5>Setup</h5>
+<ul>
+  <li>Base Href: Initial point of entry for routing is added by the CLI by default in index.html</li>
+  <li>Import the RouterModule and Routes from @angular/router into your app.module.ts</li>
+  <li>pathMatch: specifies a strict matching of path to reach the destination page.</li>
+  <li>empty path: An empty path is our default route. I.e. when the app loads for the first time.</li>
+  <li>** path: Two asterisks means that the route is a wildcard. It is particularly advantageous for error reporting
+  </li>
+  <li>Pass the routes array in the RouterModule using RouterModule.forRoot(routes) and have to add it to imports</li>
+  <li>&#60;router-outlet&#62;&#60;&#47;router-outlet&#62; in the component html will ensure that the DOM of the
+    component should be placed here.</li>
+  <li>To use parameterized routes, we attach, &#47;: after our parent route</li>
+  <li>Routes can also be nested within one another, forming parent/child route relationships</li>
+  <li>Router Links: In order to actually navigate from one route to the next, you will need to use the Angular
+    equivalent of href</li>
+  <li>Angular offers a way for determining what is the current active link. routerLinkActive="active"</li>
+  <li>Eager loading is loading the component by default without any user involvement</li>
+  <li>Lazy loading is loading the component on demand(only when user activates)</li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{lazyLoading}}</pre>
+  </li>
+</ul>

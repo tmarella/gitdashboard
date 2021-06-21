@@ -1,0 +1,83 @@
+<h1>JEST
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+
+<p class="lead">Jest is a test framework created by Facebook</p>
+<p>Why Jest?</p>
+<ul>
+  <li>Sensible faster: parallelized test runs</li>
+  <li>Snapshot testing: to make sure your UI does not change unexpectedly</li>
+  <li>Rich CLI options: only run failed tests, filter on filename and/or test name, only run related tests since the
+    latest commit</li>
+  <li>Readable and useful tests reports</li>
+  <li>Sandboxed tests: which means automatic global state resets</li>
+  <li>Built in code coverage</li>
+  <li>No need of a browser in order to run tests</li>
+  <li>Rerun instantly only tests related to latest code changes</li>
+  <li>Provides meaningful error messages</li>
+</ul>
+<p>The following steps have to be done to integrate Jest into your Angular app</p>
+<ul>
+  <li><b>Step 0:</b> Create an Angular app</li>
+  <ul>
+    <li><mark>ng new &#60;app-name&#62;</mark></li>
+  </ul>
+  <li><b>Step 1:</b> Make sure tests are running</li>
+  <ul>
+    <li>By default, Angular app uses karma to run the tests. Run below command</li>
+    <li><mark>npm test</mark></li>
+  </ul>
+  <li><b>Step 2:</b> Replace Karma by Jest</li>
+  <ul>
+    <li>We can manually update the app to remove karma and install jest but we use npm package to do all of the
+      heavylifting.</li>
+    <li>The briebug/jest-schematic command will replace Karma by Jest. Run below command</li>
+    <li><mark>ng add @briebug/jest-schematic</mark></li>
+    <li>The above command will install jest, its dependencies, add necessary files for jest to work with Angular and
+      remove unnecessary karma files and configuration</li>
+  </ul>
+  <li><b>Step 3:</b> Remove protractor</li>
+  <ul>
+    <li>Uninstall protractor and remove configuration from all files. Run below command</li>
+    <li><mark>npm uninstall protractor</mark></li>
+    <li>Remove e2e folder containing all your end-to-end tests and configuration</li>
+    <li>Remove e2e section from angular.json</li>
+    <li>Remove e2e entry in the README.md </li>
+    <li>Remove e2e command from the scripts in the package.json</li>
+  </ul>
+  <li><b>Step 4:</b> Adjust Angular CLI Configuration</li>
+  <ul>
+    <li>Replace the previous Karma builder in the test section of the angular.json with the new Jest builder</li>
+    <li>"builder": "@angular-builders/jest:run"</li>
+    <li>Remove everything in options object</li>
+  </ul>
+  <li><b>Step 5:</b> Fix Versions</li>
+  <ul>
+    <li>Fix the versions installed by briebug. Run below command</li>
+    <li><mark>npm i -D jest @types/jest jest-preset-angular ts-jest</mark></li>
+  </ul>
+  <li><b>Step 6:</b> Remove briebug npm package</li>
+  <ul>
+    <li>We don't need the npm package anymore. Run below command</li>
+    <li><mark>npm uninstall @briebug/jest-schematic</mark></li>
+  </ul>
+  <li><b>Step 7:</b> Add scripts to package.json</li>
+  <ul>
+    <li>"test": "jest"</li>
+    <li>"test:watch": "jest --watch"</li>
+    <li>"test:coverage": "jest --coverage"</li>
+    <li>"test:ci": "jest --runInBand"</li>
+  </ul>
+  <li><b>Step 7:</b> Run the tests</li>
+  <ul>
+    <li><mark>npm test</mark></li>
+  </ul>
+</ul>
+
+<!-- https://dev.to/angular/setup-jest-for-angular-with-debugging-in-visual-studio-code-2d96 -->
+<!-- https://www.xfive.co/blog/testing-angular-faster-jest/ -->
+<!-- https://vocon-it.com/2019/11/19/jestangular-replacing-karma-by-facebooks-jest-unit-test-framework/ -->

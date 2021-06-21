@@ -1,0 +1,46 @@
+<h1>Exception Handling
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">
+  Other than exceptions handled in Try-Catch blocks, there are some unhandled exceptions that can be handled using
+  below four types.</p>
+<ul>
+  <li>Using <b>&#60;customErrors&#62;</b> element in web.config</li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{customErrors}}</pre>
+  </li>
+  <li> Using <b>HandleErrorAttribute</b> </li>
+  <ul>
+    <li>HandleErrorAttribute inherits from FilterAttribute and can be applied to an entire controller or individual
+      action methods.</li>
+    <li>It can only handle 500 level errors</li>
+    <li>The problem with HandleErrorAttribute is it doesn’t provide a way to log the exception</li>
+    <li><b>Note:</b> HandleErrorAttribute requires customErrors to be enabled in your Web.Config.</li>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{sqlException}}</pre>
+    </li>
+  </ul>
+  <li> Overriding <b>Controller.OnException()</b> </li>
+  <ul>
+    <li>OnException is similar to HandleErrorAttribute</li>
+    <li>Works with all HTTP status codes and also gives you the ability to log the errors and present custom MVC views
+    </li>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{onException}}</pre>
+    </li>
+  </ul>
+  <li> Using <b>Application_Error</b> event of HttpApplication </li>
+  <ul>
+    <li>To log all unhandled exceptions that may occur within your application, you should implement basic error
+      logging code</li>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{applicationError}}</pre>
+    </li>
+    <li><b>When to use:</b> Always! HttpApplication’s Error provides the best mechanism to collect and log all
+      unhandled application errors.</li>
+  </ul>
+</ul>

@@ -1,0 +1,85 @@
+<h1>State Management
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">There are four ways</p>
+
+<!-- state Button -->
+<button type="button" class="btn btn-outline-dark mb-3" data-toggle="modal" data-target="#state">
+  State management
+</button>
+
+
+<ul>
+  <li><b>ViewData:</b> Used to transfer data from controller to view</li>
+  <ul>
+    <li>ViewData is nothing but a dictionary of objects and it is accessible by string as key</li>
+    <li>ViewData's life only lasts during current http request. ViewData values will be cleared if redirection occurs
+    </li>
+    <li>ViewData value must be type cast before use</li>
+    <li>ViewBag internally inserts data into ViewData dictionary. So the key of ViewData and property of ViewBag must
+      NOT match</li>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{viewData}}</pre>
+    </li>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{accessViewData}}</pre>
+    </li>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{viewDataKeyValue}}</pre>
+    </li>
+  </ul>
+  <li><b>ViewBag:</b> Used to transfer data from controller to view</li>
+  <ul>
+    <li>ViewBag doesn't require typecasting while retriving values from it</li>
+    <li>Internally, ViewBag is a wrapper around ViewData. It will throw a runtime exception, if the ViewBag property
+      name matches with the key of ViewData.</li>
+    <li>The ViewBag's life only lasts during the current http request. ViewBag values will be null if redirection
+      occurs. </li>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{viewBag}}</pre>
+      <span style="background-color: #d8eaea; padding: 5px;"><label>Total Students:</label>
+        @ViewBag.TotalStudents</span>
+    </li>
+  </ul>
+  <li><b>TempData:</b> Used to transfer data from one action method to another action method of the same or a different
+    controller</li>
+  <ul>
+    <li>TempData is useful when you want to transfer non-sensitive data from one action method to another action method
+      of the same or a different controller as well as redirects</li>
+    <li>TempData values will be retained during redirection</li>
+    <li>TempData internaly use Session to store the data. So think of it as a short lived session</li>
+    <li>TempData value must be type cast before use. Check for null values to avoid runtime error</li>
+    <li>To access the same TempData in the 3rd method we call TempData.Keep() in 2nd method</li>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{tempData}}</pre>
+    </li>
+  </ul>
+  <li><b>Hidden Field:</b> Hidden field is used to hide your data on client side</li>
+  <ul>
+    <li>Not recommended as user can see the value in the page source</li>
+    <li><span style="background-color: #d8eaea; padding: 5px;"> @Html.HiddenFor(x=>x.Id) </span></li>
+  </ul>
+  <li><b>Cookies:</b> Cookies are small pieces of text, stored on the client's computer to be used only by the website
+    setting the cookies.</li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{mvcCookie}}</pre>
+  </li>
+</ul>
+
+<!-- state -->
+<div class="modal fade" id="state">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <button type="button" class="close mr-4 mt-2 text-right" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="modal-body">
+        <img src="../../../../assets/images/state.png">
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,124 @@
+<h1>CSS
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary" (click)="GeneratePDF()">Export</button>
+  </div>
+</h1>
+<hr>
+
+<app-header></app-header>
+
+<div #content>
+  <h5>Basics</h5>
+  <ul>
+    <li>To add styles for a element inside an element, use <mark> element1 element2 &#123; styles &#125;</mark></li>
+    <li>To add styles to more than one selector, use <mark> element1, element2 &#123; styles &#125;</mark></li>
+    <li>To add styles for an element with specific class, use <mark> element1.element2 &#123; styles &#125;</mark></li>
+    <li>To add styles using a class, use <mark> .</mark></li>
+    <li>To add styles using a id, use <mark> #</mark>. Same id cannot be used twice in a html file</li>
+    <li>To add only styles for first element in a list, use <mark> li:first-child&#123; styles &#125;</mark></li>
+    <li>To add only styles for last element in a list, use <mark> li:last-child&#123; styles &#125;</mark></li>
+    <li>To add styles for an element when active, use <mark> element:active&#123; styles &#125;</mark></li>
+    <li>To add styles for an element on hover, use <mark> element:hover&#123; styles &#125;</mark></li>
+    <li>To add styles for an element on focus, use <mark> element:focus&#123; styles &#125;</mark></li>
+  </ul>
+  <h5>Browser dev tool features</h5>
+  <ul>
+    <li>Copy all the changes from the changes tab in devtools</li>
+    <li>Edit the animations in the animations tab</li>
+    <li>Check fonts from any website using fonts tab</li>
+  </ul>
+  <h5>CSS Units</h5>
+  <ul>
+    <li>px(Pixel) unit is going to be absolute width which is always going to be same no matter where it is defined</li>
+    <li>%(Percentage) unit is going to be percentage width based of it parent's size </li>
+    <li>vw(view width) unit is going to be percent width of the entire screen size</li>
+    <li>vh(view height) unit is going to be percent height of the entire screen size</li>
+    <li>viewport units(vw, vh) are based on entire screen size whereas % unit is relative to its parent</li>
+    <li>rem units are relative but relative to the font-size that is defined. r stands for root. Hence rem units are
+      relative to the root font size</li>
+    <li>em units are relative to its parent.</li>
+    <!-- <li>https://www.youtube.com/watch?v=-GR52czEd-0</li> -->
+  </ul>
+  <h5>CSS Calc</h5>
+  <ul>
+    <li>CSS calc is one of the few functions available in CSS and it is incredibly powerful.</li>
+    <li>We can perform simple arithmetic operations with the calc function, but we can also combine units together with
+      the calc function to create really unique spacing and sizes</li>
+    <li>CSS calc function has the ability to use it with variables(syntax: <i>--variable</i>) </li>
+    <!-- <li>https://www.youtube.com/watch?v=x7EWFoRzAkk</li> -->
+  </ul>
+  <h5>CSS Pseudo Elements</h5>
+  <ul>
+    <li>::before and ::after are pseudo elements that allow us to add elements into the code strictly from css</li>
+    <li>Since CSS3, two colons(::) are required for specifying pseudo elements</li>
+    <li>We cannot set pseudo elements for the elements that do not have content like input elements</li>
+    <!-- <li>https://www.youtube.com/watch?v=OtBpgtqrjyo</li> -->
+  </ul>
+  <h5>CSS Display</h5>
+  <ul>
+    <li>Default display property for div elements is 'block'. Hence it will take full width</li>
+    <li>Default display property for span elements is 'inline'. Hence it will take minimum amount of space possible.
+      Inline elements cannot have height and width</li>
+    <li>For images, we can use 'inline-block'. So it can use minimum amount of space and also we can specify width and
+      height</li>
+    <li>display: none property completely deletes the element from the html</li>
+    <!-- <li>https://www.youtube.com/watch?v=Qf-wVa9y9V4</li> -->
+  </ul>
+  <h5>CSS Media Queries</h5>
+  <ul>
+    <li>Media queries are used to change styles based on size of device(mobiles)</li>
+    <li>Media query starts with @media and followed by type of device(screen, print, speech)</li>
+    <li>By default, we can select all devices. The syntax is @media all followed by paranthesis</li>
+    <li>Even if we don't use 'all', it defaults to 'all'.</li>
+    <li>Media queries should be written at the end of the styles file. So that the styles dont get overridden.</li>
+    <li>Media queries can be used to style an element based on orientation&#40;landscape, potrait&#41;</li>
+    <li>Styles can be applied based on one or more conditions by using and keyword. syntax is <mark>@media &#40;orientation&#58; landscape&#41; and &#40;max-width&#58; 500px&#41;</mark></li>
+    <li>We can use 'or' keyword using 'comma' between multiple checks</li>
+    <!-- <li>https://www.youtube.com/watch?v=yU7jJ3NbPdA</li> -->
+  </ul>
+  <h5>CSS Specificity</h5>
+  <ul>
+    <li>Inline styles are more specific than ids, ids are more specific than classes, classes are more specific than tags</li>
+    <li>Example: <mark>&#60;h1&#32;id&#61;&#34;header-id&#34;&#32;class&#61;&#34;header&#34;&#32;style&#61;&#34;color&#58;&#32;red&#59;&#34;&#62;Header&#60;&#47;h1&#62;</mark></li>
+    <li>Inline styles will get more priority and overrides any styles defined using id, and styles defined using id overrides any styles defined using class and styles defined using class overrides any styles defined using tags(h1 in above example)</li>
+    <li>Order of specificity is inline&#95;styles&#62;ids&#62;class&#62;tags</li>
+    <li>Fifth level of specificity can be acheived using 'important' keyword. Any styles that use 'important' keyword will override styles defined using ids, class, tags and inlinestyles</li>
+    <li>One way to check the specificity is using browser dev tools. If any styles you see are striked off, then this means the styles are getting overridden </li>
+    <!-- <li>https://www.youtube.com/watch?v=CHyPGSpIhSs</li> -->
+  </ul>
+  <h5>CSS Variables</h5>
+  <ul>
+    <li>Varibles can be declared in the root element</li>
+    <li>Syntax of declaring a variable is <mark>--background-color&#58; red</mark></li>
+    <li>We can use the variable in any child elements using the syntax <mark>background-color: var&#40;--background-color&#41;&#59;</mark></li>
+    <!-- <li>https://www.youtube.com/watch?v=oZPR_78wCnY</li> -->
+  </ul>
+  <h5>CSS Positioning</h5>
+  <ul>
+    <li>By default, all elements are positioned as 'static'</li>
+    <li>If the position is changed to relative, then we can use top, bottom, left, right to change the position of that
+      particular element relative to the parent element</li>
+    <li>If the position is changed to absolute, the element position is fixed and it is now relative to the page.</li>
+    <li>If we want to position a child element as absolute, then we can acheive it by changing the parent position to
+      relative</li>
+    <li>If the position is changed to fixed, then the element is positioned based on entire page and even if you scroll,
+      the element stays fixed.</li>
+    <li>The difference between absolute and fixed is when scrolling, the element with position absolute also gets
+      scrolled, but the element with position fixed will not get scrolled and stays where it is.</li>
+    <li>If the element is position as sticky, combination of relative and fixed. By default the element uses relative,
+      as soon as we scroll, it is changed to fixed and stays at the position.</li>
+    <!-- <li>https://www.youtube.com/watch?v=jx5jmI0UlXU</li> -->
+    <li>Use the below parent child divs to get the difference between all positions.</li>
+  </ul>
+</div>
+
+<div class="parent">
+  Parent
+  <div class="child-one child">One</div>
+  <div class="child-two child">Two</div>
+  <div class="child-three child">Three</div>
+</div>
+
+<!-- global variables -->
+<!-- https://www.youtube.com/watch?v=BfcJDiGxt8s -->

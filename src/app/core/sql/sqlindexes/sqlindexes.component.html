@@ -1,0 +1,38 @@
+<h1>Indexes
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">
+  Indexes are used to speed up the query process.
+</p>
+<p>An index helps to speed up select queries and where clauses, but it slows down data input, with the update and the
+  insert statements.</p>
+<p>Does the exact same thing when you searched for a content in a book by checking the index page</p>
+<li style="padding-left: 20px; display:block">
+  <pre>{{indexSyntax}}</pre>
+</li>
+<li>Indexes should be created
+  <ul>
+    <li>If a column contains a wide range of values</li>
+    <li>If a column does not contain a large number of null values</li>
+    <li>One or more columns are frequently used together in a where clause or a join condition </li>
+  </ul>
+</li>
+<li>Indexes should be avoided
+  <ul>
+    <li>The table is small</li>
+    <li>The columns are not often used as a condition in the query</li>
+    <li>The column is updated frequently </li>
+  </ul>
+</li>
+<h5>Two Types</h5>
+<ul>
+  <li>Clustered index: Clustered index is the type of indexing that established a physical sorting order of rows. It is
+    similar to any word Dictionary where there will be no index but sorted in alphabetical order.</li>
+  <li>Non-lustered index: The Non-Clustered index is an index structure separate from the data stored in a table that
+    reorders one or more selected columns. It is similar to a textbook, the index page is created separately at the
+    beginning of that book. </li>
+</ul>

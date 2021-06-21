@@ -1,0 +1,28 @@
+<h1>Normalization
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">
+  Normalization is a way of organizing the data in the database hence reducing the redundancy of data in the table and
+  also improving the data integrity.
+</p>
+<h5>Why Normalization? To fix below issues</h5>
+<ul>
+  <li>Insertion anomaly: It occurs when we cannot insert data to the table without the presence of another attribute
+  </li>
+  <li>Update anomaly: It is a data inconsistency that results from data redundancy and a partial update of data.</li>
+  <li>Delete anomaly: It occurs when certain attributes are lost because of the deletion of other attributes.</li>
+</ul>
+<h5>Forms</h5>
+<ul>
+  <li>1NF: This form tackles the problem of atomicity. Here atomicity means values in the table should not be further
+    divided. A single cell cannot hold multiple values</li>
+  <li>2NF: The first condition in the 2nd NF is that the table has to be in 1st NF. To bring the table to Second
+    Normal Form, we need to break the table into two parts</li>
+  <li>3NF: The first condition in the 3rd NF is that the table has to be in 2nd NF. The other condition is there
+    should be no transitive dependency. Transitive dependency is a functional dependency( X → Y and Y → Z, then X →
+    Z).</li>
+</ul>

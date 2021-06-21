@@ -1,0 +1,48 @@
+<h1>Filters
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">
+  Web API includes filters to add extra logic before or after action method executes like logging, exception handling,
+  performance measurement, authentication and authorization.
+</p>
+<p>Few interfaces and classes that can be used to create Web API filters. </p>
+<table class="table table-condensed border" style="width: 40%; font-size: 15px;">
+  <thead class="thead-light">
+    <tr>
+      <th class="border-right font-weight-bold" style="width: 10%; border: 0;">Filter Type</th>
+      <th style="width: 70%; border: 0;">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">Simple Filter </td>
+      <td style="width: 70%; border: 0;">Defines the methods that are used in a filter</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">Action Filter </td>
+      <td style="width: 70%; border: 0;">Used to add extra logic before or after action methods execute.</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">Authentication Filter</td>
+      <td style="width: 70%; border: 0;">Used to force users or clients to be authenticated before action methods
+        execute.</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">Authorization Filter </td>
+      <td style="width: 70%; border: 0;">Used to restrict access to action methods to specific users or groups.</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">Exception Filter</td>
+      <td style="width: 70%; border: 0;">Used to handle all unhandled exception in Web API</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">Override Filter</td>
+      <td style="width: 70%; border: 0;">Used to customize the behaviour of other filter for individual action method.
+      </td>
+    </tr>
+  </tbody>
+</table>

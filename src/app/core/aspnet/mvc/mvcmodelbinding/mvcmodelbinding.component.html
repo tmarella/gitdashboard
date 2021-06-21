@@ -1,0 +1,57 @@
+<h1>Model Binding
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">
+  Model binding maps data from HTTP requests to action method parameters
+</p>
+<p>An HTTP request can carry data in different ways </p>
+<ul>
+  <li> Request.Form (values submitted in a form as an HTTP post request) </li>
+  <li> RouteData.Values (route value,s such as /Person/Edit/6) </li>
+  <li> Request.QueryString (data passed in from the query string part of a URL, such as /Person/Edit?id=6) </li>
+  <li> Request.Files (uploaded files) </li>
+</ul>
+<h5>HTTP Get</h5>
+<ul>
+  <li>The model binder will match parameter names in the method signature to those found in the request.</li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{httpGet}}</pre>
+  </li>
+  <li>if the parameter is not provided, then the model binder will bind a null value for that parameter, if the
+    parameter is a nullable type.</li>
+</ul>
+<h5>HTTP Post</h5>
+<ul>
+  <li>The model binder will bind the whole model directly to the action method</li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{httpPost}}</pre>
+  </li>
+</ul>
+<h5>Bind attribute</h5>
+<ul>
+  <li>Bind attribute is used to whitelist or blacklist specific properties</li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{bindAttribute}}</pre>
+  </li>
+  <li>Using the Bind attribute is one way to reuse the same model class while only caring about a subset of its
+    properties</li>
+</ul>
+<h5>Custom model binder</h5>
+<ul>
+  <li><b>When/Why to use: </b>Sometimes, the property of the model does not match with the UI page.</li>
+  <li>Need to implement IModelBinder</li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{customBinder}}</pre>
+  </li>
+  <li>Need to register our custom model binder either in Application_Start() or directly in the action method</li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{applicationStart}}</pre>
+  </li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{attributeControllerAction}}</pre>
+  </li>
+</ul>

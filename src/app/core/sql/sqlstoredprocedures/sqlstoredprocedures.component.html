@@ -1,0 +1,26 @@
+<h1>Stored Procedures
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">
+  SQL Server stored procedures are used to group one or more Transact-SQL statements into logical units that will be
+  stored for later use and can be used many times
+</p>
+<p>'Create Procedure' is used for wrapping the sql statements</p>
+<li style="padding-left: 20px; display:block">
+  <pre>{{spSyntax}}</pre>
+</li>
+<ul>
+  <li>Parameters: SP allows single or multiple parameters. IN(receives the values from calling program.), OUT(sends the
+    values to the calling program.), IN OUT(receives value from as well as sends the values to the calling program).
+  </li>
+  <li>Variables: We can declare a variable inside SP using DECLARE</li>
+  <li>The BEGIN...END statement is used to define a statement block. A statement block consists of a set of SQL
+    statements that execute together. A statement block is also known as a batch.</li>
+  <li>We can manage the control flow using IF ELSE, WHILE, BREAK, CONTINUE </li>
+  <li>CURSOR is used to process a data set on a row by row basis</li>
+  <li>Exceptions can be handled using TRY CATCH, RAISEERROR, THROW </li>
+</ul>

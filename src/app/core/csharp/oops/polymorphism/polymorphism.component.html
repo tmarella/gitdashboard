@@ -1,0 +1,35 @@
+<h1>Polymorphism
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">
+  Polymorphism provides ability to a class to have multiple implementations with same name.</p>
+<h5>Three Types</h5>
+<ul>
+  <li>Compile Time Polymorphism or static binding or early binding.</li>
+  <ul class="mb-2">
+    <li>Implemented using <b>method overloading.</b></li>
+    <li>we can perform different tasks with the same method name by passing different parameters.</li>
+  </ul>
+  <li>Run Time Polymorphism or dynamic binding or late binding.</li>
+  <ul>
+    <li>Implemented using <b>method overriding.</b></li>
+    <li>number of parameters and parameter type must be same.</li>
+    <li>Declare a base class method as <b>virtual</b> and derived class method as <b>override</b></li>
+    <li>The <b>virtual</b> keyword is used to modify a method, property, indexer, or event declared in the base class
+      and
+      allow it to be overridden in the derived class.</li>
+    <li>The <b>override</b> keyword is used to extend or modify a virtual/abstract method, property, indexer, or event
+      of
+      base class into derived class.</li>
+  </ul>
+  <li>Method Hiding</li>
+  <ul>
+    <li>Method Hiding is when we use the 'new' keyword to hide a base class member.</li>
+    <li>When parent class doesn't give permission to implement the method in derived class, 'new' keyword is used to
+      re-implement the base class method in derived class.</li>
+  </ul>
+</ul>

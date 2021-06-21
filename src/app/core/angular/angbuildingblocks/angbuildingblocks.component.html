@@ -1,0 +1,212 @@
+<h1>Angular Building Blocks
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+
+<p class="lead">
+  Angular is a framework built using TypeScript that provides developers with robust tools for creating the client
+  side of web applications and it follows component based architecture.
+</p>
+
+<div class="row mb-2 ml-auto">
+  <!-- lifecycle Button -->
+  <button type="button" class="btn btn-outline-dark m-1" data-toggle="modal" data-keyboard="true" data-target="#lifecycle">
+    Lifecycle
+  </button>
+  <!-- filestructure Button -->
+  <button type="button" class="btn btn-outline-dark m-1" data-toggle="modal" data-keyboard="true" data-target="#filestructure">
+    File Structure
+  </button>
+</div>
+
+<h5>Building Blocks</h5>
+<ul>
+  <li>Modules</li>
+  <ul>
+    <li>Modules are aimed for modularity and denoted by @NgModule.</li>
+    <li>The purpose of a NgModule is to declare each thing you create in Angular and group them together, like
+      packages in Java or namespaces in C#.</li>
+    <li>The @NgModule decorator is used to later on define the imports, exports, declarations, providers and
+      bootstrapping options.</li>
+    <li>The BrowserModule import is required by default for any web based angular application.</li>
+    <li>The bootstrap option tells Angular which Component to bootstrap in the application.</li>
+    <li>Export array is used to export components, directives, and pipes which can then be used in other modules.</li>
+  </ul>
+  <li>Components</li>
+  <ul>
+    <li>Component is a piece of the screen denoted by @Component.</li>
+    <li>constructor - The constructor is not actually part of Angular. It is feature of Typescript class, which is
+      called when class is instantiated.</li>
+    <li>ngOnInit − This is called whenever the initialization of the directive/component after Angular first displays
+      the data-bound properties happens. </li>
+  </ul>
+  <li>Templates</li>
+  <ul>
+    <li>The HTML templates have the look of how the page will look.</li>
+    <li>The page display can be defined internally — by template: and a piece of code, or externally — by
+      templateUrl:
+      and a directory to the compatible .html file.</li>
+  </ul>
+  <li>Directives</li>
+  <ul>
+    <li>Directives in Angular lets you change the UI elements at runtime and denoted by @directive. </li>
+    <li>Refer here for more information <a routerLink="/angular/angdirectivespipes"
+        style="text-decoration: none;">Directives and Pipes</a></li>
+  </ul>
+  <li>Services and Dependency Injection</li>
+  <ul>
+    <li>A service is typically a class with a narrow, well-defined purpose and denoted by @Injectable.</li>
+    <li>DI is inserting the service in the component’s constructor to make the code modular, reusable, and efficient.
+    </li>
+    <li>A dependency doesn't have to be a service—it could be a function, for example, or a value.</li>
+    <li>We can register providers in the metadata of the service (in the @Injectable() decorator), or in the
+      @NgModule() or @Component() metadata</li>
+  </ul>
+  <li>Metadata</li>
+  <ul>
+    <li>The metadata for a component tells Angular where to get the major building blocks that it needs to create and
+      present the component and its view.</li>
+    <li>Few options are selector, template, styles, animations, providers</li>
+  </ul>
+  <li>Angular Built-in security</li>
+  <ul>
+    <li>Built in support to prevent cross-site request forgery (XSRF) vulnerabilty - The application server sends a
+      randomly generated authentication token in a cookie. The client code reads the cookie and adds a custom request
+      header with the token in all subsequent requests. </li>
+    <li>Built in support to prevent cross-site script inclusion (XSSI) vulnerabilty - Angular recognizes the
+      convention and automatically strips the string ")]}',\n" from all responses before further parsing.</li>
+    <li>Preventing XSS using Sanitizaion. Angular inspects untrusted value and turns it into a value that's safe to
+      insert into the DOM</li>
+    <li>Angular provides route guards that tells the router whether it should allow navigation to a requested route.
+      The guards are CanActivate, CanActivateChild, CanDeactivate, CanLoad and Resolve</li>
+  </ul>
+</ul>
+
+<!-- lifecycle -->
+<div class="modal fade" id="lifecycle" tabindex='-1'>
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <button type="button" class="close mr-4 mt-2 text-right" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="modal-body">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Hook</th>
+              <th scope="col">Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>constructor</td>
+              <td>The constructor is not actually part of Angular. It is feature of Typescript class, which is
+                called when class is instantiated.</td>
+            </tr>
+            <tr>
+              <td>ngOnChanges</td>
+              <td>This method is called whenever one or more input properties of the component changes. The hook receives a SimpleChanges object containing the previous and current values of the property.</td>
+            </tr>
+            <tr>
+              <td>ngOnInit</td>
+              <td>This is called whenever the initialization of the directive/component after Angular first displays
+                the data-bound properties happens. It initializes the component and sets the input properties of the component.</td>
+            </tr>
+            <tr>
+              <td>ngDoCheck</td>
+              <td>It gets called after ngOnChanges and ngOnInit and is used to detect and act on changes that cannot be detected by Angular.
+              </td>
+            </tr>
+            <tr>
+              <td>ngAfterContentInit</td>
+              <td>It gets called after the first ngDoCheck hook. This hook responds after the content gets projected inside the component.</td>
+            </tr>
+            <tr>
+              <td>ngAfterContentChecked</td>
+              <td>This is called in response after Angular checks the content projected into the
+                component.</td>
+            </tr>
+            <tr>
+              <td>ngAfterViewInit</td>
+              <td>This is called in response after Angular initializes the component's views and child views.</td>
+            </tr>
+            <tr>
+              <td>ngAfterViewChecked</td>
+              <td>This is called in response after Angular checks the component's views and child views.</td>
+            </tr>
+            <tr>
+              <td>ngOnDestroy</td>
+              <td>This is the cleanup phase just before Angular destroys the directive/component.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- filestructure -->
+<div class="modal fade" id="filestructure" tabindex='-1'>
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <button type="button" class="close mr-4 mt-2 text-right" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="modal-body">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">File</th>
+              <th scope="col">Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>.editorconfig</td>
+              <td>Configuration for code editors</td>
+            </tr>
+            <tr>
+              <td>.gitignore</td>
+              <td>Specifies intentionally untracked files that Git should ignore</td>
+            </tr>
+            <tr>
+              <td>Readme.md </td>
+              <td>Introductory documentation for the root app</td>
+            </tr>
+            <tr>
+              <td>Angular.json</td>
+              <td>CLI configuration defaults for all projects in the workspace, including configuration options for
+                build, serve, and test tools that the CLI</td>
+            </tr>
+            <tr>
+              <td>package.json</td>
+              <td> Configures npm package dependencies that are available to all projects in the workspace
+              </td>
+            </tr>
+            <tr>
+              <td>package-lock.json</td>
+              <td>Provides version information for all packages installed into node_modules by the npm client
+                Src Source files for the root-level application project.</td>
+            </tr>
+            <tr>
+              <td>node_modules</td>
+              <td>Provides npm packages to the entire workspace. Workspace-wide node_modules dependencies are visible
+                to all projects.</td>
+            </tr>
+            <tr>
+              <td>tsconfig.json</td>
+              <td>Default Typescript configuration for projects in the workspace </td>
+            </tr>
+            <tr>
+              <td>tslint.json</td>
+              <td>Default TSLint configuration for projects in the workspace </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

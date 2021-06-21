@@ -1,0 +1,43 @@
+<h1>Type casting or Type conversion
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">Type casting is a mechanism to convert one data type value to another one. </p>
+<p>Type conversion is possible if both the data types are compatible to each other; otherwise you will get an
+  InvalidCastException. </p>
+<h5>Three Types</h5>
+<ul>
+  <li>Implicit casting</li>
+  <ul>
+    <li>Implicit conversion is being done automatically by the compiler and no data will be lost</li>
+    <li>Includes conversion of a smaller data type to a larger data types</li>
+    <li>Includes conversion of derived classes to base class</li>
+    <li>This is a safe type conversion.</li>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{implicit}}</pre>
+    </li>
+  </ul>
+  <li>Explicit casting</li>
+  <ul>
+    <li>Explicit conversion is being done by using a cast operator.</li>
+    <li>Includes conversion of larger data type to smaller data type</li>
+    <li>Includes conversion of base class to derived classes.</li>
+    <li>In this conversion information might be lost or conversion might not be succeed for some reasons.</li>
+    <li>This is an un-safe type conversion.</li>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{explicit}}</pre>
+    </li>
+  </ul>
+  <li>User-defined casting.</li>
+  <ul>
+    <li>User-defined conversion is performed by using special methods that you can define to enable explicit and
+      implicit conversions.</li>
+    <li>Includes conversion of class to struct or basic data type and struct to class or basic data type.</li>
+    <li>All conversions methods must be declared as static.</li>
+  </ul>
+  <li>Upcasting: Implicit conversion of derived classes to base class</li>
+  <li>Downcasting: Explicit conversion of base class to derived classes</li>
+</ul>

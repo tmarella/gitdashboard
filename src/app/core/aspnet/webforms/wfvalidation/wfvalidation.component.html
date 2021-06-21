@@ -1,0 +1,66 @@
+<h1>Validation
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">
+  Validation controls validate the user input data to ensure that useless, unauthenticated, or contradictory data
+  don't get stored.
+</p>
+<h5>Controls</h5>
+<ul>
+  <li><b>RequiredFieldValidator</b> To make sure that the user has entered something</li>
+  <ul>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{required}}</pre>
+    </li>
+  </ul>
+  <li><b>RangeValidator</b> To make sure that the user input is within a specified range like validating both numbers,
+    strings and dates</li>
+  <ul>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{range}}</pre>
+    </li>
+  </ul>
+  <li><b>CompareValidator</b> To compare two values, for instance the values of two controls.</li>
+  <ul>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{compare}}</pre>
+    </li>
+  </ul>
+  <li><b>RegularExpressionValidator</b> To check the validity of any kind of string.</li>
+  <ul>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{regex}}</pre>
+    </li>
+  </ul>
+  <li><b>CustomValidator</b> Allows writing application specific custom validation routines for both the client side and
+    the server side validation.</li>
+  <ul>
+    <li>Client side validation</li>
+    <ul>
+      <li>The client side validation is accomplished through the ClientValidationFunction property.</li>
+      <li>
+        <pre>{{customclient}}</pre>
+      </li>
+    </ul>
+  </ul>
+  <ul>
+    <li>Server side validation</li>
+    <ul>
+      <li>The server side validation routine must be called from the control's ServerValidate event handler.</li>
+      <li>
+        <pre>{{customserver}}</pre>
+      </li>
+    </ul>
+  </ul>
+  <li><b>ValidationSummary</b> The ValidationSummary control does not perform any validation but shows a summary of all
+    errors in the page.</li>
+  <ul>
+    <li>
+      <pre style="background-color: lightgray;">{{summary}}</pre>
+    </li>
+  </ul>
+</ul>

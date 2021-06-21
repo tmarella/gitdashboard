@@ -1,0 +1,53 @@
+<h1>Helpers
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">
+  MVC provides HtmlHelper class which contains different methods that help you create HTML controls programmatically.
+</p>
+<ul>
+  <li>All HtmlHelper methods generate HTML and return the result as a string</li>
+  <li>The HtmlHelper class is designed to generate UI and it should not be used in controllers or models</li>
+  <li>HtmlHelper method is designed to make it easy to bind to view data or model data</li>
+</ul>
+<h5>Three Types</h5>
+<ul>
+  <li>Createinputs: Creates inputs for text boxes and buttons.</li>
+  <li>Createlinks: Creates links that are based on information from the routing tables</li>
+  <li>Createforms: Create form tags</li>
+</ul>
+
+<p>Few HTML helpers</p>
+<table class="table table-condensed border" style="width: 40%; font-size: 15px;">
+  <thead class="thead-light">
+    <tr>
+      <th class="border-right font-weight-bold" style="width: 10%; border: 0;">HTML control</th>
+      <th style="width: 70%; border: 0;">HTMLHelper</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">Anchor</td>
+      <td style="width: 70%; border: 0;">Html.ActionLink</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">Textbox</td>
+      <td style="width: 70%; border: 0;">Html.TextBox</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">TextArea</td>
+      <td style="width: 70%; border: 0;">Html.TextArea</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">CheckBox</td>
+      <td style="width: 70%; border: 0;">Html.CheckBox</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">Radio Button</td>
+      <td style="width: 70%; border: 0;">Html.RadioButton</td>
+    </tr>
+  </tbody>
+</table>

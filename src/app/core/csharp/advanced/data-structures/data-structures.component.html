@@ -1,0 +1,222 @@
+<h1>Data Structures and Collections
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">
+  Collection classes are used for data manipulation
+</p>
+
+<!-- collectionflowchart Button -->
+<button type="button" class="btn btn-outline-dark mb-3" data-toggle="modal" data-target="#collectionflowchart">
+  Refer to the flowchart
+</button>
+
+<table class="table table-condensed" style="width: 100%; font-size: 15px;">
+  <tbody>
+    <tr>
+      <td class="table-heading table-heading-simple font-weight-bold" colspan="2">Generic Collection</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;Dictionary&lt;TKey, TValue&gt;</td>
+      <td>
+        <li>Represents a collection of keys and values</li>
+        <li>Methods: Add(TKey, TValue), Clear(), Remove(TKey) </li>
+        <ul>Usage:
+          <li>when we need to do fast searches and retrieval of information</li>
+          <li>when we need to access each element by index/key</li>
+          <li>when each element contains one key and one value, one key and multiple values</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;List&lt;T&gt; </td>
+      <td>
+        <li>Represents a strongly typed list of objects that can be accessed by index</li>
+        <li>Methods: Add(), Clear(), Contains() </li>
+        <ul>Usage:
+          <li>when we need to access each element by index</li>
+          <li>when each element contains one key and one value, one key and multiple values</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;Queue&lt;T&gt;</td>
+      <td>
+        <li>Represents a first-in, first-out collection of objects (FIFO)</li>
+        <li>Methods: Enqueue(T), Clear(), Contains(T) </li>
+        <ul>Usage:
+          <li>when we need a sequential list where the element is removed after its value is retrieved</li>
+          <li>when we need to access elements in certain order</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;Stack&lt;T&gt;</td>
+      <td>
+        <li>Represents a variable size last-in-first-out (LIFO)</li>
+        <li>Methods: Push(), Pop(), Clear() </li>
+        <ul>Usage:
+          <li>when we need a sequential list where the element is removed after its value is retrieved</li>
+          <li>when we need to access elements in certain order</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;LinkedList&lt;T&gt;</td>
+      <td>
+        <li>Represents a doubly linked list(contains previous pointer, next pointer and data)</li>
+        <li>Methods: AddFirst(), AddLast(), Clear() </li>
+        <ul>Usage:
+          <li>when we need to access elements in certain order</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;ObservableCollection&lt;T&gt;</td>
+      <td>
+        <li>Represents a dynamic data collection that provides notifications when items get added, removed, or when
+          the whole list is refreshed.</li>
+        <li>Methods: Contains(), Move(Int32, Int32), Insert(Int32, T)</li>
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;SortedList&lt;TKey, TValue&gt;</td>
+      <td>
+        <li>Represents a collection of key/value pairs that are sorted by key based </li>
+        <li> Methods: Add(TKey, TValue), Clear(), TryGetValue(TKey, TValue) </li>
+        <ul>Usage:
+          <li>when we need to sort the elements differently from how we entered</li>
+          <li>when we need to access each element by index</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table table-condensed" style="width: 100%; font-size: 15px;">
+  <tbody>
+    <tr>
+      <td class="table-heading table-heading-simple font-weight-bold" colspan="2">Non-generic Collection</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;Hashtable</td>
+      <td>
+        <li>Represents a collection of key, value pairs that are based on hash code of the key</li>
+        <li>Methods: Add(Object, Object), Clear(), Clone() </li>
+        <ul>Usage:
+          <li>when we need to access each element by index</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;Array</td>
+      <td>
+        <li>Represents a strongly typed list of values that can be accessed by index</li>
+        <li>Methods: Reverse(Array), Clone() </li>
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;ArrayList</td>
+      <td>
+        <li>Represents a strongly typed list of values that can be accessed by index whose size is dynamically
+          increased as required</li>
+        <li>Methods: Clone(), Clear(), Insert(Int32, Object) </li>
+        <ul>Usage:
+          <li>when we need to sort the elements differently from how we entered</li>
+          <li>when we need to access each element by index</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;Queue</td>
+      <td>
+        <li>Represents a first-in, first-out collection of objects (FIFO)</li>
+        <li>Methods: Peek(), Clone(), Clear() </li>
+        <ul>Usage:
+          <li>when we need a sequential list where the element is removed after its value is retrieved</li>
+          <li>when we need to access elements in certain order</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;Stack</td>
+      <td>
+        <li>Represents a simple last-in-first-out (LIFO) non-generic collection of objects. </li>
+        <li>Methods: Peek(), Pop(), Push(Object)</li>
+        <ul>Usage:
+          <li>when we need a sequential list where the element is removed after its value is retrieved</li>
+          <li>when we need to access elements in certain order</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;SortedList</td>
+      <td>
+        <li>Represents a collection of key/value pairs that are sorted by the keys and are accessible by key and by
+          index. </li>
+        <li>Methods: Add(Object, Object), Clone(), Clear()</li>
+        <ul>Usage:
+          <li>when we need to sort the elements differently from how we entered</li>
+          <li>when we need to access each element by index</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table table-condensed" style="width: 100%; font-size: 15px;">
+  <tbody>
+    <tr>
+      <td class="table-heading table-heading-simple font-weight-bold" colspan="2">Collection Interfaces</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;IEnumerable</td>
+      <td>
+        Enumerates(iterate) over a collection using foreach statement
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;ICollection</td>
+      <td>
+        Implemented by all collections to provide copyTo(), Add() etc
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;IList</td>
+      <td>
+        Used by array-indexable collections
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;IDictionary</td>
+      <td>
+        Used for key/value based collections like dictionary, hastable
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;IComparer</td>
+      <td>
+        Compare two objects held in a collection so that the collection can be sorted
+      </td>
+    </tr>
+    <tr>
+    </tr>
+  </tbody>
+</table>
+
+<!-- collectionflowchart -->
+<div class="modal fade" id="collectionflowchart">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <button type="button" class="close mr-4 mt-2 text-right" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="modal-body">
+        <img src="../../../../assets/images/collections.png">
+      </div>
+    </div>
+  </div>
+</div>

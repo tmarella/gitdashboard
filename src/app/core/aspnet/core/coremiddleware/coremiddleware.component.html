@@ -1,0 +1,83 @@
+<h1>Core Middleware
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">
+  Middleware is a piece of software that can handle an HTTP request or response.
+</p>
+<ul>
+  <li>middleware component(MC) has access to both - the incoming request and the outgoing response</li>
+  <li>MC may process the incoming request and pass it to next middleware in pipeline</li>
+  <li>If the request is not passed to the next middleware in the pipeline. This is called short-circuiting</li>
+  <li>MC are executed in the order they are added to the pipeline. </li>
+  <li>MC are available as NuGet packages.</li>
+</ul>
+<h5>Configuring the request processing pipeline</h5>
+<ul>
+  <li>lets say we have three MC.</li>
+  <li>To call next MC in pipeline, we add 2nd parameter i.e 'next' and call that using next()</li>
+  <li>The order of the execution is</li>
+  <ul>
+    <li>MC1 Incoming request</li>
+    <li>MC2 Incoming request</li>
+    <li>MC3 Incoming request</li>
+    <li>MC3 Outgoing response</li>
+    <li>MC2 Outgoing response</li>
+    <li>MC1 Outgoing response</li>
+  </ul>
+</ul>
+<h5>Some middleware components</h5>
+<table class="table table-condensed border" style="width: 100%; font-size: 15px;">
+  <tbody>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">UseStaticFiles</td>
+      <td style="width: 70%; border: 0;">Adds support for serving static files</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">UseDefaultFiles</td>
+      <td style="width: 70%; border: 0;">Adds support for serving static files outisde wwwroot folder</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">UseDirectoryBrowser</td>
+      <td style="width: 70%; border: 0;">Adds support to allow users to see files within a specified directory</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">UseFileServer</td>
+      <td style="width: 70%; border: 0;">Adds support to combine UseStaticFiles, UseDefaultFiles, UseDirectoryBrowser
+      </td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">UseExceptionHandler</td>
+      <td style="width: 70%; border: 0;">Adds support to catch exceptions, log them and re-execute in an alternate
+        pipeline.</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">UseHsts</td>
+      <td style="width: 70%; border: 0;">Adds strict-transport-security-header</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">UseRouting</td>
+      <td style="width: 70%; border: 0;">Adds routing capabilities for MVC or web form</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">UseHttpsRedirection</td>
+      <td style="width: 70%; border: 0;">Redirects Http requests to Https</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">UseAuthentication</td>
+      <td style="width: 70%; border: 0;">Attempt to authenticate user before they are allowed to access secured
+        resources.</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">UseEndpoints</td>
+      <td style="width: 70%; border: 0;">Adds support to add razor pages endpoints to request pipeline</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">UseAuthorization</td>
+      <td style="width: 70%; border: 0;">Authorize a user to access secured resources.</td>
+    </tr>
+  </tbody>
+</table>

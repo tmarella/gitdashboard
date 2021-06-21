@@ -1,0 +1,53 @@
+<h1>Directives and Pipes
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+
+<h2 class="header">Directives</h2>
+<p class="lead">
+  Directives are used to change the appearance, behaviour or layout of DOM element
+</p>
+<h5>Categories</h5>
+<ul>
+  <li>Component directives: Directives with a template</li>
+  <li>Structural directives: Directives used to change the structure of DOM elements like *ngIf, *ngFor, *ngSwitch
+  </li>
+  <li>Attribute directives: Directives used to change the look and behavior of DOM elements like [ngClass], [ngStyle]
+  </li>
+  <li>Custom directive: We can generate directive using CLI and assign a selector to @Directive</li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{customDirective}}</pre>
+  </li>
+</ul>
+<h2 class="header">Pipes</h2>
+<p class="lead">
+  Pipes are simple way to transform values in an Angular template. It takes integers, strings, arrays, and date as
+  input separated with | to be converted in the format as required.
+</p>
+<h5>Two Types</h5>
+<ul>
+  <li>Built-in Pipes: Lowercasepipe, Uppercasepipe, Datepipe, Currencypipe, Jsonpipe, Percentpipe, Decimalpipe,
+    Slicepipe</li>
+  <li>Custom Pipes</li>
+  <ul>
+    <li>Create a custom pipe using <span style="background-color: #d8eaea; border-radius: 10px; padding: 2px;">ng g p
+        &#60;pipe-name&#62;</span></li>
+    <li>Register the custom pipe: CLI will register/add the newly created custom pipe to the @NgModule declarations in
+      app.module.ts</li>
+    <li>Add logic for pipe</li>
+    <ul>
+      <li>
+        <pre>{{pipe}}</pre>
+      </li>
+    </ul>
+    <li>Implement the custom pipe</li>
+    <ul>
+      <li>In Template: refer to the above code block</li>
+      <li>In Component: Add pipe in the providers array in the metadata and inject in the constructor and invoke the
+        transform() in the pipe.</li>
+    </ul>
+  </ul>
+</ul>

@@ -1,0 +1,35 @@
+<h1>Joins
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">
+  Join clause is used to combine records from two or more tables.
+</p>
+<h5>Four Types</h5>
+<li style="padding-left: 20px; display:block">
+  <pre>{{joinsSyntax}}</pre>
+</li>
+<ul>
+  <li>Inner Join: Returns rows when there is a match in both tables.</li>
+  <li>Left Join: Returns all records from left table, and the matched records from right table.</li>
+  <li>Right Join: Returns all records from right table, and the matched records from left table.</li>
+  <li>Full Join: Returns all records when there is match in either left or right table.</li>
+</ul>
+<h1 class="header">Unions</h1>
+<p class="lead">
+  The Union Clause is used to combine two separate select statements.
+</p>
+<p>The fields used in both the select statements must be in same order and same data type.</p>
+<p>The Union clause produces distinct values in the result set</p>
+<p>To fetch the duplicate values, UNION ALL must be used</p>
+<li style="padding-left: 20px; display:block">
+  <pre>{{unionSyntax}}</pre>
+</li>
+<li style="padding-left: 20px; display:block">
+  <pre>{{unionAllSyntax}}</pre>
+</li>
+<p class="mark" style="display: inline;">Joins are used to combine columns from different tables. Unions are used to
+  combine rows.</p>

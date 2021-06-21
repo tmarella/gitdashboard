@@ -1,0 +1,37 @@
+<h1>Coupling and Cohesion
+    <div class="btn-group pull-right" role="group">
+        <button type="button" class="btn btn-outline-secondary">Share</button>
+        <button type="button" class="btn btn-outline-secondary">Export</button>
+    </div>
+</h1>
+<hr>
+<h2>Coupling</h2>
+<p class="lead">Coupling is a inter-module concept and we have two types.</p>
+<ul>
+    <li>Loose-Coupling: Two objects can interact but have very little knowledge of each other(Observer design
+        pattern)</li>
+    <ul>
+        <li>Promotes single-responsibility and separation of concerns</li>
+        <li>Interfaces are a powerful tool to use for decoupling.</li>
+        <li>Real world example: You and the guy at the convenience store. You communicate through a well-defined
+            protocol to achieve your respective goals - you pay money, he lets you walk out with the bag of Cheetos.
+            Either one of you can be replaced without disrupting the system.</li>
+    </ul>
+    <li>Tight-Coupling: Classes and objects are dependent on one another</li>
+    <ul>
+        <li>Reduces flexibility and re-usablity of code</li>
+        <li>Real world example: You and your wife.</li>
+    </ul>
+</ul>
+<h2>Cohesion</h2>
+<p class="lead">Cohesion is Intra -Module Concept. It's a degree of relationship within the module</p>
+<ul>
+    <li>The greater the cohesion, the better will be the program design and quality</li>
+    <li>Cohesion is a degree (quality) to which a / module focuses on a single thing.</li>
+    <li>While designing you should strive for high cohesion i.e. a cohesive component/ module focus on a single task
+    </li>
+    <li>Low Cohesion Real world example: Convenience store that has all in one place thats results in high costs and
+        low quality</li>
+    <li>High Cohesion Real world example: Cheese store. They only sell cheese. So cost is low and quality is high
+    </li>
+</ul>

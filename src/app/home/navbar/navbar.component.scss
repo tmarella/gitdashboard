@@ -1,0 +1,31 @@
+.d-flex {
+    display: flex;
+    align-items: center;
+  }
+  
+  a, a:hover {
+    color:black;
+    text-decoration: none;
+  }
+
+  a:not([href]):hover {
+    color: white;
+  }
+  
+  li {
+    cursor: pointer;
+    color:black !important;
+  }
+
+  .csharp,
+.asp,
+.angular,
+.sql,
+.misc,
+.diff {
+  color: #e66969 !important;
+}
+
+.navbar-toggler:focus{
+outline: none;
+}

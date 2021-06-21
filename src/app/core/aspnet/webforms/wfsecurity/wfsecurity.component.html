@@ -1,0 +1,29 @@
+<h1>Security
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">Implementing security has following aspects</p>
+<ul>
+  <li>Authentication: Validating based on login credentials</li>
+  <li>
+    <pre>{{syntax}}</pre>
+  </li>
+  <ul>
+    <li>Windows Authentication: Needs to be configured in IIS</li>
+    <ul>
+      <li>Four different methods: Anonymous, basic, digest and windows integrated</li>
+    </ul>
+    <li>Forms Authentication</li>
+    <ul>
+      <li>Configure the Security Settings in the Web.config File</li>
+      <li>Create a Login Page</li>
+      <li>On Submitting the credentials, validate the user credentials by looking in the database using ADO.NET </li>
+      <li>Redirecting based on success/fail authentication</li>
+    </ul>
+    <li>Passport Authentication: Uses Microsoft's passport service to authenticate.</li>
+  </ul>
+  <li>Authorization: Allowing authenticated users based on roles</li>
+</ul>

@@ -1,0 +1,31 @@
+<h1>Controls
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">Webforms have HTML Server controls and user defined controls</p>
+<h5>HTML Server Controls</h5>
+<p>HTML server controls are HTML elements that contain attributes to accessible at server side using runat="server"
+</p>
+<p>Few HTML controls are</p>
+<ul>
+  <li>label, textbox, button</li>
+  <li>listbox, checkbox, dropdownlist</li>
+</ul>
+<h5>User defined controls</h5>
+<p>A UserControl is a separate, reusable part of a page. You can put a piece of a page in a UserControl, and then
+  reuse it from a different location</p>
+<p>Register User Controls and Custom Controls in Web.config like below</p>
+<ul>
+  <li>Declare them once within the controls section in the web.config file</li>
+  <li>
+    <pre>{{registerControl}}</pre>
+  </li>
+  <li>the "~" keyword in ASP.NET means "resolve from the application root path"</li>
+  <li>Once you register the controls within the web.config file, you can then just use the controls on any page</li>
+  <li>
+    <pre>{{usageRegisterControl}}</pre>
+  </li>
+</ul>

@@ -1,0 +1,36 @@
+<h1>Architecture
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">
+  MVC stands for Model, View, and Controller. MVC separates an application into three components - Model, View, and
+  Controller.
+</p>
+<ul>
+  <li><b>Model</b> represents the shape of the data. A class in C# is used to describe a model. Model objects store
+    data
+    retrieved from the database.</li>
+  <li><b>View</b> is a user interface. View displays model data to the user and also enables them to modify them.</li>
+  <li><b>Controller</b> handles the user request. Typically, the user uses the view and raises an HTTP request,
+    which will be handled by the controller</li>
+</ul>
+<h1 class="header">Folder structure</h1>
+<ul>
+  <li>App_Data: Contains application data files like LocalDB, .mdf files, xml files</li>
+  <li>App_Start: Contains class files(AuthConfig.cs, BundleConfig.cs, FilterConfig.cs, RouteConfig.cs) which will be
+    executed when the application starts</li>
+  <li>Content: Contains static files like css files, images and icons files</li>
+  <li>Controllers: Contains class files for the controllers</li>
+  <li>Fonts: Contains custom font files </li>
+  <li>Models: Contains model class files that includes public properties</li>
+  <li>Scripts: Contains JavaScript or VBScript files</li>
+  <li>Views: Contains .cshtml files </li>
+  <li>Global.asax: Contains Code related to application level events(Application_BeginRequest, application_start,
+    application_error, session_start, session_end)</li>
+  <li>Packages.config: File is managed by NuGet to keep track of what packages and versions installed in application
+  </li>
+  <li>Web.config: Contains application level configurations. </li>
+</ul>

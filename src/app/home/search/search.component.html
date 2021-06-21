@@ -1,0 +1,13 @@
+<div class="jumbotron">
+    <h1 class="display-4">Search a topic</h1>
+    <hr class="my-4">
+    <form spellcheck="false" class="d-flex dropdown" [formGroup]="SearchForm">
+      <input class="form-control" type="text" formControlName="searchText" placeholder="Search" data-toggle="dropdown">
+      <div class="dropdown-menu" *ngIf="this.searchResultsArray" [ngStyle]="calculateStyles()"
+        style="width: 641px; padding:0px; height: 50vh;  overflow-y: scroll; opacity: 0.9;">
+        <li class="list-group-item" *ngFor="let item of searchResultsArray">
+          <a [href]=item.route target="_blank">{{item.name}}</a>
+        </li>
+      </div>
+    </form>
+  </div>

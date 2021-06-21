@@ -1,0 +1,40 @@
+<h1>Api Routing
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">
+  Web API routing is similar to <a routerLink="/aspnet/mvcrouting" style="text-decoration: none;">MVC
+    routing</a>
+</p>
+<h5>Convention based Routing</h5>
+<ul>
+  <li>Url Pattern: &#123;api&#125;/&#123;controller&#125;/&#123;id&#125;</li>
+  <li>The config.Routes is a route table or route collection of type HttpRouteCollection</li>
+  <li>The "DefaultApi" route is added in the route table using MapHttpRoute() extension method</li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{addRoute}}</pre>
+  </li>
+  <li>Web API also supports routing same as ASP.NET MVC by including action method name in the URL. </li>
+  <li>Multiple routes can be added like below</li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{addMultipleRoutes}}</pre>
+  </li>
+</ul>
+<h5>Attribute based Routing</h5>
+<ul>
+  <li>Attribute routing uses [Route()] attribute to define routes.</li>
+  <li>Attribute routing is enabled in WebApiConfig.cs by calling config.MapHttpAttributeRoutes() method.</li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{attributeRoute}}</pre>
+  </li>
+</ul>
+<h5>Parameter Binding</h5>
+<ul>
+  <li>Default Web API gets the value of a primitive parameter from the query string and complex type parameter from
+    the request body but we can change it using FromUri and FromBody</li>
+  <li>FromUri: attribute to get the value of complex data type from the query string</li>
+  <li>FromBody: attribute to get the value of primitive data type from the request body</li>
+</ul>

@@ -1,0 +1,77 @@
+<h1>ADO.NET
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">
+  ADO.NET provides a bridge between the front end controls and the back end database.
+</p>
+
+<table class="table table-condensed border" style="width: 100%; font-size: 15px;">
+  <tbody>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">DataSet</td>
+      <td style="width: 70%; border: 0;">represents subset of database</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">DataTable</td>
+      <td style="width: 70%; border: 0;">represents tables in the DataSet</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">DataRow</td>
+      <td style="width: 70%; border: 0;">represents row in the DataTable</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">SqlDataAdapter</td>
+      <td style="width: 70%; border: 0;">is an intermediate layer which acts as a bridge between the DataSet and a
+        Database</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">SqlDataReader</td>
+      <td style="width: 70%; border: 0;">Provides a way of reading a forward-only stream of rows</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">SqlCommand</td>
+      <td style="width: 70%; border: 0;">Represents a TSQL statement or stored procedure to execute against a SQL
+        Server database</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5>SqlCommand methods</h5>
+<ul>
+  <li>ExecuteNonQuery(): Executes a Transact-SQL statement against the connection and returns the number of rows
+    affected.</li>
+  <li>ExecuteReader(): Returns the collection of rows selected by the Query.Return type is DataReader and must be
+    assigned to another object DataReader.</li>
+  <li>ExecuteScalar(): Executes the query, and returns the first column of the first row. Return type is object and
+    must bea assigned to a variable of required type.</li>
+  <li>ExecuteXmlReader(): Sends the CommandText to the Connection and builds an XmlReader object.</li>
+</ul>
+<h5>SqlCommand properties</h5>
+<ul>
+  <li>CommandText: Gets or Sets the table name or stored procedure to execute</li>
+  <li>CommandType: Gets or sets a value indicating how the CommandText property is to be interpreted.</li>
+  <li>Connection: Gets or sets the SqlConnection</li>
+  <li>Parameters: Gets the SqlParameterCollection</li>
+</ul>
+
+<ul>
+  <li>ExecuteNonQuery in Vb
+    <pre>{{executeNonQueryVb}}</pre>
+  </li>
+  <li>ExecuteNonQueryin c#
+    <pre>{{executeNonQueryCsharp}}</pre>
+  </li>
+  <li>SqlDataAdapter in Vb
+    <pre>{{sqlDataAdapterVb}}</pre>
+  </li>
+  <li>SqlDataAdapter in c#
+    <pre>{{sqlDataAdapterCsharp}}</pre>
+  </li>
+  <li>ExecuteReader in c#
+    <pre>{{executeReaderCsharp}}</pre>
+  </li>
+</ul>

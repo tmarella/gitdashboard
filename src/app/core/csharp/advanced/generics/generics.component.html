@@ -1,0 +1,29 @@
+<h1>Generics
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">
+  Generics allows to delay the specification of the data type of programming elements in a class or a method until it
+  is actually used in the program. In other words, generics allow you to write a class or method that can work
+  with any data type.
+</p>
+<h5>Syntax</h5>
+<ul>
+  <li>To declare class as Generic, [class_name]&lt;T&gt;</li>
+  <li>To instantiate generic class, [class_name]&lt;any type&gt;</li>
+  <li>To declare method as Generic, [method_name]&lt;T&gt;</li>
+  <li>To instantiate generic method, [method_name]&lt;any type&gt;</li>
+  <li>To declare parameters as Generic, [method_name](T param1, T param2)</li>
+  <li>To instantiate method in generic class, [class_name]&lt;any type&gt;.[method_name](any type param1,
+    any type param2)</li>
+  <li>To implement generic interface: class Stack&lt;T&gt; where T : System.IComparable&lt;T&gt;,
+    IEnumerable&lt;T&gt;</li>
+</ul>
+<h5>Advantages</h5>
+<ul>
+  <li>Maximize code reuse, type safety, and performance.</li>
+  <li>Generics will eliminate the boxing and unboxing operations.</li>
+</ul>

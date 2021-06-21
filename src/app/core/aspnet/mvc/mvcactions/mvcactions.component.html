@@ -1,0 +1,63 @@
+<h1>Actions
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">
+  Action Methods are responsible to execute requests and generate responses to it. By default, it generates a response
+  in the form of ActionResult.
+</p>
+<ul>
+  <li>Action method parameter can be Nullable Type</li>
+  <li>Action method must be public. It cannot be private or protected</li>
+  <li>Action method cannot be overloaded</li>
+  <li>Action method cannot be a static method</li>
+</ul>
+<p>ActionResult is base class for following result classes</p>
+<table class="table table-condensed border" style="width: 100%; font-size: 15px;">
+  <tbody>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">ViewResult</td>
+      <td style="width: 70%; border: 0;">Represents HTML and markup </td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">EmptyResult</td>
+      <td style="width: 70%; border: 0;">Represents No response</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">ContentResult</td>
+      <td style="width: 70%; border: 0;"> Represents string literal</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">
+        FileContentResult/FilePathResult/FileStreamResult</td>
+      <td style="width: 70%; border: 0;">Represents the content of a file</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">JavaScriptResult</td>
+      <td style="width: 70%; border: 0;"> Represent a JavaScript script</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">JsonResult</td>
+      <td style="width: 70%; border: 0;">Represent JSON that can be used in AJAX</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">RedirectResult</td>
+      <td style="width: 70%; border: 0;">Represents a redirection to a new URL</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">RedirectToRouteResult</td>
+      <td style="width: 70%; border: 0;">Represent another action of same or other controller</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">PartialViewResult</td>
+      <td style="width: 70%; border: 0;">Returns HTML from Partial view</td>
+    </tr>
+    <tr>
+      <td class="border-right font-weight-bold" style="width: 10%; border: 0;">HttpUnAuthorizedResult</td>
+      <td style="width: 70%; border: 0;">Returns HTTP 403 status</td>
+    </tr>
+  </tbody>
+</table>

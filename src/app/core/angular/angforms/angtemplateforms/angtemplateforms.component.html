@@ -1,0 +1,47 @@
+<h1>Template Forms
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+
+<p class="lead">
+  These forms are used in Angular 1. The heavylifting is done in template itself. Template directives are used to build
+  an internal representation of the form. The main disadvantange is we can not unit test the form validation logic.
+</p>
+<h5>Setup</h5>
+<ul>
+  <li>Import FormsModule in your app or feature module</li>
+  <li>Simple Registration form template</li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{registrationForm}}</pre>
+  </li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{stateForm}}</pre>
+  </li>
+  <li>Component class code</li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{componentClass}}</pre>
+  </li>
+  <li>#newUserForm=”ngForm”: With this, we give our form a template reference name to make it easy to access its value
+    and validity.</li>
+  <li>We can create template references for form fields with the #someName=”ngModel” syntax. We can then use these
+    references to access the value or validity of these fields.</li>
+  <li>With tempalte reference, we can use (ngIf) depending on states of the field (valid, pristine, touched)</li>
+  <li>Form fields are bound to properties in your component class using the banana in a box syntax:
+    [(ngModel)]=”userName”. This effectively creates two-way data binding,</li>
+  <li>Each form field that has an ngModel directive should also have a name attribute set. The value for name doesn’t
+    have to be the same as the value bound in the component class using [(ngModel)].</li>
+  <li>Submitting: The form hooks into the ngSubmit event that Angular provides for template-driven forms and calls an
+    onSubmit method that we define with our form passed-in. A user clicking on the button of type submit will trigger
+    that ngSubmit event</li>
+  <li>We bind to the submit button’s disabled property to disable the button when the form as a whole is invalid.</li>
+  <li>Forms can be reset by calling the reset() method on them.</li>
+  <li>Define simple CSS rules to style the different fields of a form depending on the validity state. Make sure to
+    exclude the form element (:not(form)) as otherwise the whole form would also get a red border when a field has
+    been touched and is invalid.</li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{css}}</pre>
+  </li>
+</ul>

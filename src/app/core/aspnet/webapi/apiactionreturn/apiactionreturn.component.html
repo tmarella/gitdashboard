@@ -1,0 +1,41 @@
+<h1>Action Return
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<h5>Four Types</h5>
+<ul>
+  <li>Void: Action method returns void. It will send 204 "No Content" status code as a response </li>
+  <li>Primitive type or Complex type: An action method can return primitive or other custom complex types as other
+    normal methods.</li>
+  <li>HttpResponseMessage</li>
+  <ul>
+    <li>The Web API controller returns HttpResponseMessage object</li>
+    <li>We can also create and return an object of HttpResponseMessage directly from an action method. </li>
+    <li>The advantage of sending HttpResponseMessage from an action method is that you can configure a response(status
+      code, content or error message)</li>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{httpResponseMessage}}</pre>
+    </li>
+  </ul>
+  <li>IHttpActionResult</li>
+  <ul>
+    <li>An action method in Web API 2 can return an implementation of IHttpActionResult class which is more or less
+      similar to ActionResult class in ASP.NET MVC.</li>
+    <li>We can use various methods of ApiController class that returns an object that implement the IHttpActionResult.
+    </li>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{ihttpActionResult}}</pre>
+    </li>
+    <li>We can create our own custom class that implements IHttpActionResult </li>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{customResult}}</pre>
+    </li>
+    <li>We can return object from the action method as shown below</li>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{returnCustomResult}}</pre>
+    </li>
+  </ul>
+</ul>

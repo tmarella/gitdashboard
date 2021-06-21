@@ -1,0 +1,57 @@
+<h1>Validation
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">
+  Validation is used to check whether the user input is valid.
+  Validations in MVC can be performed using:
+</p>
+<ul>
+  <h4>Client Side Validation</h4>
+  <ul>
+    <li><b>Jquery</b></li>
+    <ul>
+      <li>Enable ClientValidation and UnobtrusiveJavaScript in Web.config file</li>
+      <li>
+        <pre>{{jQuery}}</pre>
+      </li>
+      <li>Include jQuery.min, jQuery.validate, jQuery.unobtrusive scripts in the view. </li>
+    </ul>
+  </ul>
+  <h4>Server Side Validation</h4>
+  <ul>
+    <li><b>ModelState Object</b></li>
+    <ul>
+      <li>ModelState is a property of controller that is used for server side validation (System.Web.Mvc).</li>
+      <li>ModelState is a collection of name and value pair submitted to the server during post</li>
+      <li>ModelState takes 2 parameter. First Parameter “Name” is a name of input control and 2nd parameter is a
+        string error message.</li>
+      <li>We need to check boolean property "IsValid" in ModelState object for validation.</li>
+      <pre>{{modelStateHtml}}</pre>
+      <li>On controller we add error message to ModelState and set to the control like
+        <b>ModelState.AddModelError("Name", "Name Required");</b>.</li>
+      <pre>{{modelStateCs}}</pre>
+    </ul>
+    <li><b>Data Annotation</b></li>
+    <ul>
+      <li>Has built-in validation attributes for different validation rules, applied to the properties of model class
+      </li>
+      <li>Ther are included in System.ComponentModel.DataAnnotations</li>
+      <li>In the Attribute we can add error message</li>
+      <li>Required, RegularExpression, EmailAddress, Phone, MaxLength, MinLength etc</li>
+    </ul>
+    <li><b>Custom validations</b></li>
+    <ul>
+      <li>For creating "Custom Validation" we need to create one class which is derived from ValidationAttribute
+        class.</li>
+      <li>we have to override the "IsValid" function and all the custom validation logic should go inside it.</li>
+      <li>The requirement here is, Join date of customer should be less than current date</li>
+      <li>
+        <pre>{{customValidator}}</pre>
+      </li>
+    </ul>
+  </ul>
+</ul>

@@ -1,0 +1,59 @@
+<h1>Navigation
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">
+  ASP.NET has built-in navigation controls
+</p>
+<h5>Four Ways</h5>
+<ul>
+  <li><b>Sitemap:</b> The menu can be stored in a file normally called web.sitemap, and is stored in the root
+    directory of the web.</li>
+  <ul>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{sitemap}}</pre>
+    </li>
+    <li>The XML file must contain a siteMap tag surrounding the content</li>
+    <li>The XML file must contain a siteMap tag surrounding the content</li>
+    <li>Each siteMapNode can have several child nodes (web pages)</li>
+    <li>Each siteMapNode has attributes defining page title and URL</li>
+  </ul>
+</ul>
+<ul>
+  <li><b>Dynamic:</b> The &#60;asp:Menu &#62; control displays a standard site navigation menu. </li>
+  <ul>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{dynamic}}</pre>
+    </li>
+    <li>The &#60;asp:SiteMapDataSource&#62; control automatically connects to the default sitemap file (web.sitemap).
+    </li>
+  </ul>
+</ul>
+<ul>
+  <li><b>TreeView:</b> The &#60;asp:TreeView &#62;control displays a multi level navigation menu.</li>
+  <ul>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{treeview}}</pre>
+    </li>
+    <li>The &#60;asp:SiteMapDataSource&#62; control automatically connects to the default sitemap file (web.sitemap).
+    </li>
+    <li>The menu looks like a tree with branches that can be opened or closed with + or - symbol. </li>
+    <li>The &#60;asp:SiteMapDataSource&#62; control automatically connects to the default sitemap file (web.sitemap).
+    </li>
+  </ul>
+</ul>
+<ul>
+  <li><b>SiteMapPath:</b> The SiteMapPath control displays the navigation path to the current page. The path acts as
+    clickable links to previous pages.</li>
+  <ul>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{sitemappath}}</pre>
+    </li>
+    <li>SiteMapPath control does NOT use a SiteMapDataSource. The SiteMapPath control uses the web.sitemap file by
+      default.
+    </li>
+  </ul>
+</ul>

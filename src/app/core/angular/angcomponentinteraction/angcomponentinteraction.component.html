@@ -1,0 +1,84 @@
+<h1>Component Interaction
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+
+<p class="lead">
+  Component interaction is a feature where the data is shared between components. There are different ways to
+  accomplish this.
+</p>
+<h5>@Input: Parent &#8594; child</h5>
+<ul>
+  <li>Works using the @Input() decorator to allow data to be passed via the template</li>
+  <li>The data flow is uni-directional from parent to child</li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{inputParent}}</pre>
+  </li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{inputChild}}</pre>
+  </li>
+</ul>
+<hr>
+<h5>@Output: Child &#8594; Parent</h5>
+<ul>
+  <li>Here we listen for changes on a certain value in the child component and emit a value to the parent when an
+    event occurs</li>
+  <li>Works using the @Output() and EventEmitter()</li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{outputParent}}</pre>
+  </li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{outputChild}}</pre>
+  </li>
+</ul>
+<hr>
+<h5>@ViewChild: Child &#8594; Parent </h5>
+<ul>
+  <li>ViewChild allows a one component to be injected into another, giving the parent access to its attributes and
+    functions.</li>
+  <li>Works using @ViewChild</li>
+  <li>We need to implement the AfterViewInit() lifecycle hook to receive the data from the child.</li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{viewchildParent}}</pre>
+  </li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{viewchildChild}}</pre>
+  </li>
+</ul>
+<hr>
+<h5>Template variable: Parent &#8594; child</h5>
+<ul>
+  <li>We use template variable to access child members from parent</li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{templateVariableParent}}</pre>
+  </li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{templateVariableChild}}</pre>
+  </li>
+</ul>
+<hr>
+<h5>Shared service: Two independent components</h5>
+<ul>
+  <li>Shared service is used for passing data between components that lack a direct connection</li>
+  <li>We use RxJS BehaviorSubject </li>
+  <li>Prefer BehaviorSubject over Subject because</li>
+  <ul>
+    <li>It will always return the current value on subscription — there is no need to call onnext</li>
+    <li>It has a getValue() function to extract the last value as raw data.</li>
+    <li>It ensures that the component always receives the most recent data.</li>
+  </ul>
+  <li>All components receive the same treatment. We inject the DataService in the constructor, then subscribe to the
+    currentMessage observable</li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{sharedservice}}</pre>
+  </li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{sharedserviceComponent1}}</pre>
+  </li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{sharedserviceComponent2}}</pre>
+  </li>
+</ul>

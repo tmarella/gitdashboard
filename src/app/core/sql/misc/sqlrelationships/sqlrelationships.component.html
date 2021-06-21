@@ -1,0 +1,36 @@
+<h1>Relationships
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<h5>Three Types</h5>
+<ul>
+  <li>one-to-one: A pair of tables bears a one-to-one relationship when a single record in the first table is related
+    to only one record in the second table, and a single record in the second table is related to only one record in
+    the first table.</li>
+  <li>one-to-many: A one-to-many relationship exists between a pair of tables when a single record in the first table
+    can be related to one or more records in the second table, but a single record in the second table can be related
+    to only one record in the first table.</li>
+  <li>many-to-many: A pair of tables bears a many-to-many relationship when a single record in the first table can be
+    related to one or more records in the second table and a single record in the second table can be related to one
+    or more records in the first table.</li>
+</ul>
+<h5>Self-Referencing Relationships</h5>
+<ul>
+  <li>one-to-one: A self-referencing one-to-one relationship exists when a given record in the table can be related to
+    only one other record within the table</li>
+  <li>one-to-many: A table bears a self-referencing one-to-many relationship to itself when a given record in the
+    table can be related to one or more other records within the table.</li>
+  <li>many-to-many: A self-referencing many-to-many relationship exists when a given record in the table can be
+    related to one or more other records within the table and one or more records can themselves be related to the
+    given record. </li>
+</ul>
+<h5>Disadvantages of Many-to-Many Relationships</h5>
+<ul>
+  <li>It will be tedious and somewhat difficult to retrieve information from one of the tables.</li>
+  <li>One of the tables will contain a large amount of redundant data.</li>
+  <li>Duplicate data will exist within both tables.</li>
+  <li>It will be difficult for you to insert, update, and delete data.</li>
+</ul>

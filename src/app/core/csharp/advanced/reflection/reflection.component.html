@@ -1,0 +1,27 @@
+<h1>Reflections
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">
+  Reflection is used to obtain type information at runtime using classes that give access to the metadata of a running
+  program.
+</p>
+<h5>Common usage</h5>
+<ul>
+  <li>log4net.LogManager.GetLogger(System.Reflection.MethodBase.<b>GetCurrentMethod()</b>.DeclaringType);</li>
+  <li>typeof(T)</li>
+</ul>
+<h5>Advantages</h5>
+<ul>
+  <li>Can view metadata</li>
+  <li>Check the type of an object at runtime like typeof(), GetCurrentMethod()</li>
+  <li>Inspect the Attributes of an object at runtime to change the behavior of a method</li>
+</ul>
+<h5>Disadvantages</h5>
+<ul>
+  <li>Overhead at runtime.</li>
+  <li>Performance can be hampered a lot</li>
+</ul>

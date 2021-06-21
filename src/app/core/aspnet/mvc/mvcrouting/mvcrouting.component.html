@@ -1,0 +1,110 @@
+<h1>Routing
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">
+  Routing is the process of directing an HTTP request to a controller
+</p>
+<h5>Convention based Routing</h5>
+<ul>
+  <li>Url Pattern: &#123;domain&#125;/&#123;controller&#125;/&#123;action&#125;/&#123;id&#125;</li>
+  <li>We can configure a custom route using MapRoute extension method. You need to provide at least two
+    parameters in MapRoute, route name and url pattern. The Defaults parameter is optional. </li>
+  <li>After configuring all the routes in RouteConfig class, you need to register it in the Application_Start() event
+    in the Global.asax<br>
+    <span style="background-color: #d8eaea; padding: 5px;">RouteConfig.RegisterRoutes(RouteTable.Routes);</span>
+  </li>
+  <li>MVC framework evaluates each route in sequence.</li>
+  <li>Simple Convention Routing example</li>
+  <ul>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{conventionRouting}}</pre>
+    </li>
+  </ul>
+  <li>Convention Routing example with constraints</li>
+  <ul>
+    <li>We can apply restrictions on the value of parameter by configuring route constraints</li>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{conventionRoutingConstraints}}</pre>
+    </li>
+  </ul>
+  <li>We can register multiple custom routes with different names</li>
+  <ul>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{conventionRoutingMultipleConstraints}}</pre>
+    </li>
+  </ul>
+</ul>
+<h5>Attribute based Routing</h5>
+<p>Attribute Routing (introduced in MVC 5) is the ability to add routes to the Route Table via attributes so that the
+  route definitions are in close proximity to their corresponding actions.</p>
+<ul>
+  <li>To enable attribute routing, <span style="background-color: #d8eaea; padding: 5px">
+      routes.MapMvcAttributeRoutes();
+    </span></li>
+  <li>Simple Attribute Routing example</li>
+  <ul>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{attributeRouting}}</pre>
+    </li>
+  </ul>
+  <li>Attribute Routing example with parameters</li>
+  <ul>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{attributeRoutingParameters}}</pre>
+    </li>
+  </ul>
+  <li>Attribute Routing example with optional parameters(using '?')</li>
+  <ul>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{attributeRoutingOptionalParameters}}</pre>
+    </li>
+  </ul>
+  <li>Attribute Routing example with optional parameters(using '?')</li>
+  <ul>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{attributeRoutingOptionalParameters}}</pre>
+    </li>
+  </ul>
+  <li>Attribute Routing example with parameter type constraint</li>
+  <ul>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{attributeRoutingParametersConstraint}}</pre>
+    </li>
+  </ul>
+  <li>Route Prefix</li>
+  <ul>
+    <li>RoutePrefix can be applied to every action in a controller class</li>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{attributeRoutingRoutePrefix}}</pre>
+    </li>
+  </ul>
+  <li>We can override the Route Prefix using the absolute-path prefix '~/'</li>
+  <ul>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{attributeRoutingRoutePrefixOverride}}</pre>
+    </li>
+  </ul>
+  <li>Default route can be specified using '~/' or empty string</li>
+  <ul>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{attributeRoutingRoutePrefixDefault}}</pre>
+    </li>
+  </ul>
+  <li>Default route can also be specified by capturing them as inputs.</li>
+  <ul>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{attributeRoutingRoutePrefixDefaultInput}}</pre>
+    </li>
+  </ul>
+  <li>Names and Order</li>
+  <ul>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{attributeRoutingRoutePrefixNamesOrder}}</pre>
+    </li>
+    <li>If no order is specified, the routes are inserted into the Route Table in the order they are listed</li>
+  </ul>
+</ul>

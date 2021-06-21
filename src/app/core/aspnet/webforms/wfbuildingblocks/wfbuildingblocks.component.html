@@ -1,0 +1,43 @@
+<h1>Building Blocks
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+
+<h2 class="header">Page Life cycle</h2>
+<h5>Phases </h5>
+<ul>
+  <li>Initialization</li>
+  <li>Instantiation of the controls on the page</li>
+  <li>Restoration and maintenance of the state</li>
+  <li>Execution of the event handler codes</li>
+  <li>Page rendering</li>
+</ul>
+<h5>Stages</h5>
+<ul>
+  <li>Page request</li>
+  <li>Starting of page life cycle</li>
+  <li>Page Initialization</li>
+  <li>Page load</li>
+  <li>Validation</li>
+  <li>Postback Event handling</li>
+  <li>Pge rendering</li>
+  <li>Unload</li>
+</ul>
+<h5>Events</h5>
+<ul>
+  <li>PreInit: Checks the IsPostBack property</li>
+  <li>Init: Initializes the control property</li>
+  <li>InitComplete: Allows tracking of view state</li>
+  <li>LoadViewState: ALlows laoding view state information into the controls</li>
+  <li>LoadPostData: contents of all input fields are defined with form tag are processed</li>
+  <li>PreLoad: occurs before PostBack</li>
+  <li>Load: load event will raise first for the page and loads for all child controls</li>
+  <li>LoadComplete: loading is completed and the control event handlers are run and page validation occurs</li>
+  <li>PreRender: occurs just before output is rendered</li>
+  <li>PreRenderComplete: Ensures the completion of the PreRender phase</li>
+  <li>SaveStateComplete: state of control on this page is saved</li>
+  <li>UnLoad: raise the unload event for all controls recursively and lastly for page itself</li>
+</ul>

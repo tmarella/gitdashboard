@@ -1,0 +1,40 @@
+<h1>Filters
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">
+  Filters are custom classes that provide logic to execute pre-action and post-action of controller action methods.
+</p>
+<h5>Four Types</h5>
+<ul>
+  <li>Authorization filters: Performs authentication and authorizes before executing action method like [Authorize]
+  </li>
+  <li>Action filters: Performs some operation before and after an action method executes </li>
+  <ul>
+    <li>
+      Action filters are attributes that can be applied either on a controller or controller action method.
+    </li>
+    <li>
+      When applied on a controller level, it is applicable for all actions with in that controller.
+    </li>
+  </ul>
+  <li>Result filters: Performs some operation before or after the execution of view result like [OutputCache] </li>
+  <li>Exception filters: Performs some operation if there is an unhandled exception like [HandleError] </li>
+</ul>
+<h5>Register Filters</h5>
+<ul>
+  <li>Global level: Applies at global level in the Application_Start event of Global.asax.cs file by using default
+    FilterConfig.RegisterGlobalFilters() method</li>
+  <li>Controller level: Applies to the controller class. So, filters will be applicable to all the action methods</li>
+  <li>Action method level: Applies filters to an individual action method</li>
+</ul>
+<h5>Custom Filter</h5>
+<ul>
+  <li>We can create custom filter attributes by implementing an appropriate filter interface</li>
+  <li>For example, implement IExceptionFilter and FilterAttribute class to create custom exception filter.</li>
+  <li>implement an IAuthorizatinFilter interface and FilterAttribute class to create a custom authorization filter.
+  </li>
+</ul>

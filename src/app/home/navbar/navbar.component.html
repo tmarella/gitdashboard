@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" routerLink="/">Interview Depo</a>
+    <button class="navbar-toggler ml-auto hidden-sm-up float-xs-right" style="border: none;" type="button" data-toggle="collapse"
+        data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars"></span>
+    </button>
+    <button style="border: none;" class="navbar-toggler ml-1" type="button" data-toggle="collapse" data-target="#sidebar"
+        aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-ellipsis-v"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" routerLinkActive="csharp" routerLink="csharp"
+                    data-target=".navbar-collapse.show">
+                    C#
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" routerLinkActive="asp" routerLink="aspnet"
+                    data-target=".navbar-collapse.show">
+                    ASP.NET
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" routerLinkActive="angular" routerLink="angular"
+                    data-target=".navbar-collapse.show">
+                    Angular
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" routerLinkActive="sql" routerLink="sql"
+                    data-target=".navbar-collapse.show">
+                    SQL
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" routerLinkActive="misc" routerLink="misc"
+                    data-target=".navbar-collapse.show">
+                    Misc
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" routerLinkActive="diff" routerLink="differences"
+                    data-target=".navbar-collapse.show">
+                    Differences
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" routerLinkActive="active">
+                    Salesforce
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" routerLinkActive="active">
+                    Java
+                </a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0 d-flex dropdown" [formGroup]="navSearchForm">
+            <input class="form-control" type="text" formControlName="searchText" placeholder="Search"
+                data-toggle="dropdown">
+            <div class="dropdown-menu" *ngIf="this.searchResultsArray" [ngStyle]="calculateStyles()"
+                style="width: 222px; padding:0px; height: 50vh;  overflow-y: scroll; opacity: 0.9;">
+                <li class="list-group-item" *ngFor="let item of searchResultsArray">
+                    <a [href]=item.route target="_parent">{{item.name}}</a>
+                </li>
+            </div>
+        </form>
+    </div>
+</nav>

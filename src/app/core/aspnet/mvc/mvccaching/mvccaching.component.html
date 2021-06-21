@@ -1,0 +1,61 @@
+<h1>Caching
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">
+  Caching means to store something in memory that is being used frequently to provide better performance.
+</p>
+<h5>Two Ways</h5>
+<ul>
+  <li>Page Output Caching: Refers to the ability of the web server to cache a certain webpage</li>
+  <ul>
+    <li>Output Cache Filter</li>
+    <ul>
+      <li>Allows you to cache the data that is output of an action method</li>
+      <li>By default, this attribute filter cache the data till 60 seconds</li>
+      <li>To enable Output Caching, add [OutputCache] attribute to an action method</li>
+      <li>If we have multiple action methods across controllers needing the same caching behavior, we can put the
+        caching values in the web.config and create a cacheprofile for it. </li>
+      <li style="padding-left: 20px; display:block">
+        <pre>{{cacheProfileConfig}}</pre>
+      </li>
+      <li>Usage of cache profile is</li>
+      <li style="padding-left: 20px; display:block">
+        <pre>{{cacheProfileUsage}}</pre>
+      </li>
+      <li>Parameters used: Duration, SqlDependency, Location</li>
+      <li>Output Caching Location</li>
+      <ul>
+        <li>By default, content is cached in three locations: the web server, any proxy servers, and the user's browser
+        </li>
+        <li>Content's cached location can be set to: Any, Client, Downstream, Server, None, or ServerAndClient.</li>
+      </ul>
+    </ul>
+  </ul>
+  <li>Application Caching: Application data caching is a mechanism for storing the Data objects in a Key-Value based
+    cache.</li>
+  <ul>
+    <li style="padding-left: 20px; display:block">
+      <pre>{{applicationCaching}}</pre>
+    </li>
+    <li>Parameters used: absoluteExpiration, Dependencies, onRemoveCallBack</li>
+  </ul>
+</ul>
+<h5>Key points</h5>
+<ul>
+  <li>Avoid caching for contents that are unique per user.</li>
+  <li>Use caching for contents that are accessed frequently.</li>
+  <li>Use the VaryByCustom function to cache multiple versions of a page based on cookies, role, theme, browser, and so
+    on.</li>
+</ul>
+<h5>Advantages</h5>
+<ul>
+  <li>Reduces server requests</li>
+  <li>Reduces database requests</li>
+  <li>Reduces network traffic</li>
+  <li>Avoids time-consumption for regenerating reusable content</li>
+  <li>Improves performance</li>
+</ul>

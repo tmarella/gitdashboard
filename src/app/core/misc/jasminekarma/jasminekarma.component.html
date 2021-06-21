@@ -1,0 +1,51 @@
+<h1>Jasmine/Karma
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+
+<div #content>
+  <h5>Jasmine</h5>
+  <p class="lead">
+    Jasmine is a JavaScript testing framework that supports a software development practice called Behaviour-Driven
+    Development. It’s a specific flavour of Test-Driven Development (TDD).
+  </p>
+  <p>Jasmine provides builtin functions that we need to use to create a test</p>
+  <ul>
+    <li>describe(string, function): to define a suite, collection of individual Test Specs.</li>
+    <li>it(string, function): to define a spec or a test, this contains one or more Test Expectations.</li>
+    <li>expect(actual): is for Expectation. It describes an expected piece of behaviour in the application.</li>
+    <li>matcher(expected): expression is what we call a Matcher. Few pre-built matchers are toContain(). toBe(), toEqual() etc</li>
+  </ul>
+  <h5>Karma</h5>
+  <p class="lead">
+    Karma is the default test runner for applications created with the Angular CLI. Karma is a tool which lets us spawn
+    browsers and run Jasmine tests inside of them all from the command line. The results of the tests are also displayed
+    on the command line.
+  </p>
+  <p>When creating Angular projects using the Angular CLI it defaults to creating and running unit tests using Jasmine
+    and Karma.</p>
+  <h5>Setup and Teardown</h5>
+  <ul>
+    <li>beforeAll: This function is called once, before all the specs in a test suite (describe function) are run. </li>
+    <li>afterAll: This function is called once after all the specs in a test suite are finished. </li>
+    <li>beforeEach: This function is called before each test specification (it function) is run. </li>
+    <li>afterEach: This function is called after each test specification is run. </li>
+  </ul>
+  <h5>Angular TestBed(ATB)</h5>
+  <ul>
+    <li>The Angular Test Bed (ATB) is a higher level Angular Only testing framework that allows us to easily test behaviours that depend on the Angular Framework.</li>
+    <li>We still write our tests in Jasmine and run using Karma but we now have a slightly easier way to create components, handle injection, test asynchronous behaviour and interact with our application.</li>
+    <li>In the beforeEach function for our test suite we configure a testing module using the TestBed class.</li>
+    <li>This creates a test Angular Module which we can use to instantiate components, perform dependency injection and so on.</li>
+    <li>We configure it in exactly the same way as we would configure a normal NgModule. </li>
+    <li>A fixture is a wrapper for a component and its template.</li>
+    <li>We create an instance of a component fixture through the TestBed, this injects the AuthService into the component constructor.</li>
+    <li>We can find the actual component from the componentInstance on the fixture.</li>
+    <li>We can get resolve dependencies using the TestBed injector by using the get function.</li>
+    <li>Once the ATB is setup, we can use it to instantiate components and resolve dependencies like below</li>
+    <span><pre>{{sampleTestBed}}</pre></span>
+  </ul>
+</div>

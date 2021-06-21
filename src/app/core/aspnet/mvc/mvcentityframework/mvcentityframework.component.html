@@ -1,0 +1,81 @@
+<h1>Entity Framework
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">
+  Entity framework is object relational mapping framework that offers automated mechanism for storing and accessing
+  data in database.
+</p>
+<h5>Advantages</h5>
+<ul>
+  <li>Provides auto generated code</li>
+  <li>Reduce development time and development cost</li>
+  <li>Enables developers to visually design models and mapping of database</li>
+  <li>It’s easy to map business objects (with drag & drop tables).</li>
+  <li>Allows customized mappings like single entity to multiple tables and even multiple entities to single table
+  </li>
+</ul>
+<h5>Disadvantages</h5>
+<ul>
+  <li>Lazy loading is the main drawbacks of EF</li>
+  <li>Its syntax is complicated </li>
+  <li>It is not available for every RDMS </li>
+  <li>It does not work if we change any schema of the database. We need to update the schema on the solution.
+  </li>
+  <li>It is not good for huge domain model. </li>
+</ul>
+<h5>Code First Approach</h5>
+<p>
+  This approach starts with writing code in c# and then EF will create database from your code.
+</p>
+<ul>
+  <li>Install Entity framework nuget package</li>
+  <li>Add database connection string information in config file</li>
+  <li>Add a POCO class</li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{poco}}</pre>
+  </li>
+  <li>Create another class and inherit DBContext</li>
+  <li>Declare a DBSet</li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{dbset}}</pre>
+  </li>
+  <li>Perform DBContext operations</li>
+  <li>Execute command 'Enable migrations' in package manager console. This is required only once for the project.</li>
+  <li>Execute 'Add migrations &#60;migration-name&#62;' in package manager console</li>
+  <li>Execute 'Update-Database' in package manager console</li>
+  <li>Verify database in SSMS</li>
+</ul>
+<h5>Database First Approach</h5>
+<p>
+  This approach starts with creating database and tables and then EF will create domain classes.
+</p>
+<ul>
+  <li>Create Database and table in SSMS</li>
+  <li>In VS, add a new ADO.NET entity data model and select EF Designer from database</li>
+  <li>Select existing database, select framework and select tables, views and stored procedures</li>
+  <li>Entity model(.edmx) and POCO classes are generated in VS</li>
+  <li>Create an instance for DBContext class usually &#60;dbname+entities&#62;</li>
+  <li>Create a new object of poco class</li>
+  <li>Save changes to the database using SaveChanges()</li>
+  <li>Run the application</li>
+  <li>Verify changes in database in SSMS</li>
+</ul>
+<h5>Eager loading</h5>
+<ul>
+  <li>Eager Loading helps you to load all your needed entities at once. i.e. related objects (child objects) are loaded
+    automatically with its parent object.</li>
+  <li>Use Eager Loading when the relations are not too much. Thus, Eager Loading is a good practice to reduce further
+    queries on the Server.</li>
+  <li>Use Eager Loading when you are sure that you will be using related entities with the main entity everywhere</li>
+</ul>
+<h5>Lazy loading</h5>
+<ul>
+  <li>In case of lazy loading, related objects (child objects) are not loaded automatically with its parent object until
+    they are requested. By default LINQ supports lazy loading.</li>
+  <li>Use Lazy Loading when you are using one-to-many collections.</li>
+  <li>Use Lazy Loading when you are sure that you are not using related entities instantly.</li>
+</ul>

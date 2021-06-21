@@ -1,0 +1,36 @@
+<div [@FadeInAnimation] class="container-fluid">
+    <div class="row">
+        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar collapse-active">
+            <div class="sidebar-sticky pt-3">
+                <ul class="nav flex-column">
+                    <li class="mb-1" *ngFor="let item of angularmenu.individual;">
+                        <a [routerLinkActive]=item.routerLinkActive [routerLink]=item.route>{{item.name | trimSubMenu }}</a>
+                      </li>
+                      <li> <a data-toggle="collapse" data-target="#angularforms" class="collapsed active"> <span
+                            class="nav-label">Forms</span> <span class="fa fa-chevron-right pull-right"></span>
+                        </a>
+                        <ul class="sub-menu collapse" id="angularforms">
+                          <li class="mb-1" *ngFor="let item of angularmenu.forms;">
+                            <a [routerLinkActive]=item.routerLinkActive [routerLink]=item.route>{{item.name | trimSubMenu}}</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li> <a data-toggle="collapse" data-target="#misc" class="collapsed active"> <span
+                            class="nav-label">Misc</span> <span class="fa fa-chevron-right pull-right"></span>
+                        </a>
+                        <ul class="sub-menu collapse" id="misc">
+                          <li class="mb-1" *ngFor="let item of angularmenu.misc;">
+                            <a [routerLinkActive]=item.routerLinkActive [routerLink]=item.route>{{item.name | trimSubMenu}}</a>
+                          </li>
+                        </ul>
+                      </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="mainContent col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <router-outlet (activate)="onActivate()"></router-outlet>
+        </div>
+
+    </div>
+</div>

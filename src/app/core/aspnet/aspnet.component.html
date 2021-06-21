@@ -1,0 +1,62 @@
+<div [@FadeInAnimation] class="container-fluid">
+    <div class="row">
+        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar collapse-active">
+            <div class="sidebar-sticky pt-3">
+                <ul class="nav flex-column">
+                    <li>
+                        <a data-toggle="collapse" data-target="#webforms" class="collapsed active">
+                            <span class="nav-label">Web Forms</span>
+                            <span class="fa fa-chevron-right pull-right"></span> </a>
+                        <ul class="sub-menu collapse" id="webforms">
+                            <li class="mb-1" *ngFor="let item of aspnetmenu.webforms;">
+                                <a [routerLinkActive]=item.routerLinkActive
+                                    [routerLink]=item.route>{{item.name | trimSubMenu}}</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-toggle="collapse" data-target="#mvc" class="collapsed active">
+                            <span class="nav-label">MVC</span>
+                            <span class="fa fa-chevron-right pull-right"></span>
+                        </a>
+                        <ul class="sub-menu collapse" id="mvc">
+                            <li class="mb-1" *ngFor="let item of aspnetmenu.mvc;">
+                                <a [routerLinkActive]=item.routerLinkActive
+                                    [routerLink]=item.route>{{item.name | trimSubMenu}}</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-toggle="collapse" data-target="#webapi" class="collapsed active">
+                            <span class="nav-label">Web API</span>
+                            <span class="fa fa-chevron-right pull-right"></span>
+                        </a>
+                        <ul class="sub-menu collapse" id="webapi">
+                            <li class="mb-1" *ngFor="let item of aspnetmenu.webapi;">
+                                <a [routerLinkActive]=item.routerLinkActive
+                                    [routerLink]=item.route>{{item.name | trimSubMenu}}</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-toggle="collapse" data-target="#core" class="collapsed active">
+                            <span class="nav-label">Core</span>
+                            <span class="fa fa-chevron-right pull-right"> </span>
+                        </a>
+                        <ul class="sub-menu collapse" id="core">
+                            <li class="mb-1" *ngFor="let item of aspnetmenu.core;">
+                                <a [routerLinkActive]=item.routerLinkActive
+                                    [routerLink]=item.route>{{item.name | trimSubMenu}}</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="mainContent col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <router-outlet (activate)="onActivate()"></router-outlet>
+        </div>
+
+    </div>
+</div>

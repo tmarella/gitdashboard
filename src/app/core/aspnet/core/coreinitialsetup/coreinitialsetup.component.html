@@ -1,0 +1,82 @@
+<h1>Introduction
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<ul>
+  <li>Program.cs file contains Main()</li>
+  <li>Main() is the place where the configuration takes place. CreateWebHostBilder() returns IWebHostBuilder and does
+    below tasks</li>
+  <ul>
+    <li>Setting up the web server</li>
+    <li>Loading the host and application configuration</li>
+    <li>Configuring logging</li>
+  </ul>
+  <li>Startup.cs file is the entry point of the ASP.NET Core application and it contains ConfigureServices() and
+    Configure()</li>
+  <ul>
+    <li>ConfigureServices(): configures the servies required for the application</li>
+    <li>Configure(): configures application request processing pipeline</li>
+  </ul>
+</ul>
+
+<h5>Features</h5>
+<ul>
+  <li>Built-in supports for Dependency Injection</li>
+  <li>Built-in supports for the logging framework and it can be extensible </li>
+  <li>Introduced new, fast and cross-platform web server - Kestrel. So, a web application can run without IIS, Apache,
+    and
+    Nginx</li>
+  <li>Multiple hosting ways are supported </li>
+  <li>Command-line supports to create, build and run the application </li>
+  <li>There is no web.config file. We can store the custom configuration into an appsettings.json file </li>
+  <li>There is no Global.asax file. We can now register and use the services into startup class </li>
+  <li>Provide protection against CSRF (Cross-Site Request Forgery) </li>
+</ul>
+<h5>Advantages of ASP.NET Core over ASP.NET</h5>
+<ul>
+  <li>It is cross-platform, so it can be run on Windows, Linux, and Mac.</li>
+  <li>There is no dependency on framework installation because all the required dependencies are ship with our
+    application</li>
+  <li>ASP.NET Core can handle more requests than the ASP.NET</li>
+  <li>Multiple deployment options available withASP.NET Core</li>
+</ul>
+<h5>Hosting</h5>
+<ul>
+  <li>InProcess hosting: host the app inside the IIS(iisexpress.exe) and this is efficient.</li>
+  <li>OutofProcess hosting</li>
+  <ul>
+    <li>Internal web server: kestrel</li>
+    <li>External web server: can be IIS, Nginx or Apache</li>
+  </ul>
+</ul>
+<h5>Settings</h5>
+<ul>
+  <li>launchSettings.json: This file is only used on local development machine. No need to publish. It can define
+    project specific settings associated with each profile Visual Studio is configured to launch the application,
+    including any environment variables that should be used. You can define framework for your project for compliation
+    and debugging for specific profiles. </li>
+  <li>appSettings.json</li>
+  <ul>
+    <li>Stores application configuration settings like DB connection strings,Logging in this file.</li>
+    <li>We can have environment specific appsettings.json files</li>
+  </ul>
+</ul>
+<h5>Configuration Sources</h5>
+<ul>
+  <li>Files(appSettings.json)</li>
+  <li>User Secrets</li>
+  <li>Environment variable</li>
+  <li>Command line arguments</li>
+</ul>
+<p>If you have a configuration setting with the same key in multiple configuration sources, the later configuration
+  sources override the earlier configuration sources</p>
+<ul>
+  <li>appSettings.json</li>
+  <li>appSettings.&#123;environment&#125;.json</li>
+  <li>User Secrets</li>
+  <li>Environment variable</li>
+  <li>Command line arguments</li>
+</ul>

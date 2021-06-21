@@ -1,0 +1,27 @@
+<h1>Dependency Injection
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">
+  Dependency Injection is a design pattern that allows the creation of dependant objects outside of class and provide
+  those objects to a class in different ways.
+</p>
+<h5>Three Ways</h5>
+<ul>
+  <li>Constructor Injection: CI is done by supplying the dependency through constructor while creating the instance of
+    that class.</li>
+  <pre>{{constructorInjection}}</pre>
+  <li>Property Injection: PI is used in cases where we need a parameter-less constructor(like Struct).</li>
+  <pre>{{propertyInjection}}</pre>
+  <li>Method Injection: MI is used when the entire class does not need the dependency, just the one method.</li>
+  <pre>{{methodInjection}}</pre>
+</ul>
+<h5>Advantages</h5>
+<ul>
+  <li>Reduces class coupling.</li>
+  <li>Code is clean and more readable.</li>
+  <li>Improves code maintainability.</li>
+</ul>

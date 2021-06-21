@@ -1,0 +1,27 @@
+<h1>Views
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">
+  View are kind of virtual tables, View also has rows and columns like tables based on a certain conditions.</p>
+<li style="padding-left: 20px; display:block">
+  <pre>{{viewSyntax}}</pre>
+</li>
+<ul>
+  <li>view_name: Name for the View</li>
+  <li>table_name: Name of the table </li>
+  <li> condition: Condition to select rows </li>
+</ul>
+<span>Updating Views are allowed only if below all conditions are met </span>
+<ul>
+  <li>The SELECT statement which is used to create the view should not include GROUP BY clause or ORDER BY clause.
+  </li>
+  <li>The SELECT statement should not have the DISTINCT keyword. </li>
+  <li>The View should have all NOT NULL values. </li>
+  <li>The view should not be created using nested queries or complex queries. </li>
+  <li>The view should be created from a single table. If the view is created using multiple tables then we will not be
+    allowed to update the view.</li>
+</ul>

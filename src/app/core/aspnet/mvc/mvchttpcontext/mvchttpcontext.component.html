@@ -1,0 +1,24 @@
+<h1>HttpContext
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">
+  HttpContext is used to access all HTTP related functionality
+</p>
+<h5>Properties</h5>
+<ul>
+  <li>HttpContext.Request: All members related to the current request, e.g. the QueryString, Forms and so on.</li>
+  <ul>
+    <li>HttpContext.Request.QueryString, HttpContext.Request.Query and HttpContext.Request.Form</li>
+    <li>Syntax: HttpContext.Request.Query["name"]), HttpContext.Request.Form["UserName"]</li>
+  </ul>
+  <li>HttpContext.Response: All members related to the Response about to be delivered, e.g. Cookies and response
+    headers</li>
+  <ul>
+    <li>Syntax: HttpContext.Response.Cookies.Append("user_id", "1");</li>
+  </ul>
+  <li>HttpContext.User: All members related to dealing with a (potentially) authenticated user</li>
+</ul>

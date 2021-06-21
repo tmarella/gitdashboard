@@ -1,0 +1,54 @@
+<h1>Introduction
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">
+  ASP.NET Web API is a framework for building HTTP services and is similar to ASP.NET MVC since it contains the MVC
+  features such as routing, controllers, action results, filter, model binders, and dependency injection.
+</p>
+<h5>Features</h5>
+<ul>
+  <li>Supports convention-based CRUD actions, since it works with HTTP verbs GET,POST,PUT and DELETE</li>
+  <li>Responses have an Accept header and HTTP status code</li>
+  <li>Supports multiple text formats like XML, JSON etc</li>
+  <li>Supports Self-hosting or IIS Hosting</li>
+</ul>
+<h5>Why to choose</h5>
+<ul>
+  <li>If you need a Web Service and don’t need SOAP, then ASP.NET Web API is best choice</li>
+  <li>Easy configuration unlike WCF REST service</li>
+  <li>Simple service creation with Web API. With WCF REST Services, service creation is difficult</li>
+  <li>Based on HTTP and so easy to define, expose and consume in a REST-ful way</li>
+  <li>Open source</li>
+</ul>
+<h5>HTTP Methods</h5>
+<ul>
+  <li>GET: Used to read a representation of resource</li>
+  <li>POST: Used to create new resource</li>
+  <li>DELETE: Used to delete a resource</li>
+  <li>PUT: Used to update a resource. It can be used for create also</li>
+  <li>PATCH: Used to modify a resource</li>
+</ul>
+<h5>REST principles</h5>
+<ul>
+  <li>It should be state less</li>
+  <li>It should access all the resources from the server using URI only</li>
+  <li>It does not have inbuilt encryption</li>
+  <li>It does not have session</li>
+  <li>It only uses HTTP protocol</li>
+  <li>It should return the result only in light weight data format like JSON, XML</li>
+  <li>It should use HTTP verbs like GET, PUT, POST, PATCH, DELETE</li>
+</ul>
+<h5>Configure Web API</h5>
+<ul>
+  <li>Web API supports code based configuration. It cannot be configured in web.config file</li>
+  <li>Web API configuration process starts when the application starts. It calls
+    GlobalConfiguration.Configure(WebApiConfig.Register) in the Application_Start method</li>
+  <li> The Configure() method requires the callback method where Web API has been configured in code. By default this
+    is the static WebApiConfig.Register() method</li>
+  <li>Register() accepts a parameter HttpConfiguration that contains properties like Filters, Formatters, properties,
+    Routes, Services</li>
+</ul>

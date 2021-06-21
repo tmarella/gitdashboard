@@ -1,0 +1,117 @@
+<h1>HTTP
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+
+<p class="lead">
+  Front end applications communicate with backend servers through REST APIs (which are based on the HTTP protocol)
+  using either the XMLHttpRequest interface or the fetch() API
+</p>
+<p>The HttpClient is available from the @angular/common/http</p>
+<h5>Advantages</h5>
+<ul>
+  <li>Has many built-in features for implementing test units</li>
+  <li>Makes use of RxJS Observables for handling asynchronous operations</li>
+  <li>Easy error handling</li>
+  <li>Retrying failed HTTP requests</li>
+  <li>HttpClient has built-in XSRF protection mechanisms. It sets the X-XSRF-TOKEN in the request headers with the
+    XSRF token and server can verify it.</li>
+</ul>
+<h5>Prerequisites for making HTTP request from Angular</h5>
+<ul>
+  <li>Add the HttpClientModule to the imports array of your AppModule</li>
+  <li>Import the HttpClient into your component and add it to the constructor()</li>
+</ul>
+<hr>
+<h6>GET request with response type 'any'</h6>
+<span style="padding-left: 20px; display:block">
+  <pre>{{getAny}}</pre>
+</span>
+<h6>POST request with response type 'any'</h6>
+<span style="padding-left: 20px; display:block">
+  <pre>{{postAny}}</pre>
+</span>
+<h6>GET request with strongly typed response</h6>
+<span style="padding-left: 20px; display:block">
+  <pre>{{getStrong}}</pre>
+</span>
+<h6>POST request with strongly typed response</h6>
+<span style="padding-left: 20px; display:block">
+  <pre>{{postStrong}}</pre>
+</span>
+<h6>GET request with error handling</h6>
+<span style="padding-left: 20px; display:block">
+  <pre>{{getError}}</pre>
+</span>
+<h6>POST request with error handling</h6>
+<span style="padding-left: 20px; display:block">
+  <pre>{{postError}}</pre>
+</span>
+<h6>GET request with headers set</h6>
+<span style="padding-left: 20px; display:block">
+  <pre>{{getHeaders}}</pre>
+</span>
+<h6>POST request with headers set</h6>
+<span style="padding-left: 20px; display:block">
+  <pre>{{postHeaders}}</pre>
+</span>
+<h6>POST request with Json and file</h6>
+<span style="padding-left: 20px; display:block">
+  <pre>{{postFileandJson}}</pre>
+</span>
+<h6 #target>GET request with Observable HttpResponse</h6>
+<span style="padding-left: 20px; display:block">
+  <pre>{{getObservableHttp}}</pre>
+</span>
+<h6>POST request with Observable HttpResponse</h6>
+<span style="padding-left: 20px; display:block">
+  <pre>{{postObservableHttp}}</pre>
+</span>
+<hr>
+<h5>Promise</h5>
+<ul>
+  <li>Promise emits a single value</li>
+  <li>Promise is eager as it executes immediately on creation</li>
+  <li>Promise cannot be cancellable</li>
+  <li>Doesn't provide any operators</li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{promise}}</pre>
+  </li>
+</ul>
+<h5>Observable</h5>
+<ul>
+  <li>Observable emits multiple values</li>
+  <li>Observable is lazy as it doesn't request until it is subscribed</li>
+  <li>Observable have subscriptions that are cancellable using the unsubscribe() method</li>
+  <li>Provides the map for forEach, filter, reduce, retry, and retryWhen operators.</li>
+  <li>For example, <a href="javascript:void(0)" style="text-decoration: none;" (click)="Scroll(target)">Refer here</a>
+  </li>
+</ul>
+<h5>HTTP Interceptor</h5>
+<p>Http Interceptor is used to modify/change any outgoing http requests and incoming responses globally like adding
+  headers, converting responses(XML to Json)</p>
+<ul>
+  <li>We can manipulate the URL</li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{manipulateURL}}</pre>
+  </li>
+  <li>Set up Loader(Spinner) centrally in an interceptor so that we show a loader whenever there are active requests.
+  </li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{loader}}</pre>
+  </li>
+  <li>Convert PascalCase to camelCase</li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{pascaltocamel}}</pre>
+  </li>
+  <li>Manipulate headers: Authentication/authorization, XSRF protection</li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{headers}}</pre>
+  </li>
+  <li>Fake backend</li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{fakebackend}}</pre>
+  </li>

@@ -1,0 +1,37 @@
+<h1>State
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">Cookie, Sessions and ViewState are used to maintain value and validity of data</p>
+<h5>Cookie</h5>
+<p>Cookies are small pieces of text, stored on the client's computer to be used only by the website setting the
+  cookies.</p>
+<ul>
+  <li>We can create a new cookie value: HttpCookie cookie = new HttpCookie("BackgroundColor");</li>
+  <li>We can assign the value: cookie.Value = ColorSelector.SelectedValue;</li>
+  <li>We can set the lifespan of cookie: cookie.Expires = DateTime.Now.AddHours(1);</li>
+  <li>We can set the value: Response.SetCookie(cookie);</li>
+  <li>When the page loads, In Page_Load event, we will find if the value of the cookie:
+    Request.Cookies["BackgroundColor"]</li>
+  <li>If the cookie value is not null, we will set the value</li>
+  <li>Cookies are available across the application</li>
+</ul>
+<h5>Sessions</h5>
+<p>Sessions can be used to store even complex data for the user. Actually, sessions will use cookies to store the
+  data, unless you explicitly tell it to store in session object.</p>
+<ul>
+  <li>We can set the value initally: Session["BackgroundColor"] = ColorSelector.SelectedValue;</li>
+  <li>We can get the value and assign it: ColorSelector.SelectedValue = Session["BackgroundColor"].ToString();</li>
+  <li>We can set the session lifespan in web.config file</li>
+  <li>Session values are available across the application</li>
+</ul>
+<h5>ViewState</h5>
+<p>ViewState allows ASP.NET to repopulate form fields on each postback to the server</p>
+<ul>
+  <li>We can set the value: ViewState["NameOfUser"] = NameField.Text;</li>
+  <li>We can get the value: ViewState["NameOfUser"]</li>
+  <li>ViewState is available only in that specific page</li>
+</ul>

@@ -1,0 +1,92 @@
+<h1>Reactive Forms
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+
+<p class="lead">
+  Reactive forms were introduced with Angular 2. We build our own representation of a form in the component class. The
+  main advantange is we can not unit test the form validation logic.
+</p>
+
+<!-- baseclasses Button -->
+<button type="button" class="btn btn-outline-dark mb-2 ml-auto" data-toggle="modal" data-target="#baseclasses">
+  Base Classes and Services
+</button>
+
+<h5>Setup</h5>
+<ul>
+  <li>Import ReactiveFormsModule in your app or feature module</li>
+  <li>Simple Reactive form template</li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{reactiveForm}}</pre>
+  </li>
+  <li>Component class</li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{componentClass}}</pre>
+  </li>
+  <li>We can see that the form is really just a FormControl, which keeps track of the global validity state.</li>
+  <li>In the array notation, the first element of the array is the initial value of the control, and the remaining
+    elements are the control's validators</li>
+  <li>It is possible to subscribe to the Form stream of values using the Observable API</li>
+  <li style="padding-left: 20px; display:block">
+    <pre>{{observable}}</pre>
+  </li>
+  <li>We can get to a control with either myForm.get(‘name’) or with myForm.controls.name</li>
+  <li>We can update form values using patchValue() and setValue()</li>
+  <li>We can get to errors with either .hasError(‘required’) or .errors.required</li>
+  <li style="padding-left: 20px; display:block">
+    <span>patchValue(): We use patchValue to set the subset of the values, we then use patchValue. In this example, we
+      set only of the three values.</span><br>
+    <span>setValue(): We use setValue to set the value of every form of control on the form. For example, here we have
+      three form control in our form model. And now because we want to update the value of each one of these, we use
+      setValue.</span>
+    <pre>{{updateForm}}</pre>
+  </li>
+  <li>To reset the form, we use reset()</li>
+</ul>
+
+<!-- baseclasses -->
+<div class="modal fade" id="baseclasses">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <button type="button" class="close mr-4 mt-2 text-right" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="modal-body">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Class</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>AbstractControl</td>
+              <td>The abstract base class for formControl, formGroup and formArray</td>
+            </tr>
+            <tr>
+              <td>FormControl</td>
+              <td>Manages the value and validity status of individual form control</td>
+            </tr>
+            <tr>
+              <td>FormGroup</td>
+              <td>Manages the value and validity status of group of form controls</td>
+            </tr>
+            <tr>
+              <td>FormArray</td>
+              <td>Manages the value and validity status of arrary of form controls</td>
+            </tr>
+            <tr>
+              <td>FormBuilder</td>
+              <td>An injectible service that provides factory methods for creating control instances</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<h1>Multi threading
+  <div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-outline-secondary">Share</button>
+    <button type="button" class="btn btn-outline-secondary">Export</button>
+  </div>
+</h1>
+<hr>
+<p class="lead">
+  Multi-threading is basically trying to do more than one thing at a time within a process.
+</p>
+<p>
+  Threads are lightweight processes and is defined as the execution path of a program.
+</p>
+<h5>Thread Life Cycle</h5>
+<ul>
+  <li><b>Unstarted state: </b> Situation when the instance of the thread is created but the Start method is not called
+  </li>
+  <li><b>Ready state: </b>Situation when the thread is ready to run and waiting CPU cycle</li>
+  <li><b>Not runnable state: </b>When sleep() or wait() is called or blocked by I/O operations</li>
+  <li><b>Dead state: </b>Situation when the thread completes execution or is aborted.</li>
+</ul>
+<h5>Properties</h5>
+<ul>
+  <li><b>IsAlive: </b>Gets a value indicating the execution status of the current thread.</li>
+  <li><b>Name: </b>Gets or sets the name of the thread.</li>
+  <li><b>CurrentThread: </b>Gets the currently running thread.</li>
+</ul>
+<h5>Methods</h5>
+<ul>
+  <li><b>Abort(): </b>Calling this method usually terminates the thread.</li>
+  <li><b>Sleep(): </b>Makes the thread pause for a period of time.</li>
+  <li><b>Interrupt(): </b>Interrupts a thread that is in the WaitSleepJoin thread state.</li>
+  <li><b>Start(): </b>Starts a thread.</li>
+</ul>
