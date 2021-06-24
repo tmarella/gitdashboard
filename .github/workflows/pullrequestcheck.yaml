@@ -15,7 +15,11 @@ jobs:
     - name: List files in the workspace
       run: |
         ls ${{ github.workspace }}
-    - name: Run npm tests
-      env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      run: npm start
+    - name: Run npm install
+      run: npm install
+    - name: Run npm lint
+      run: npm lint
+    - name: Run npm install
+      run: npm install
+    - name: Run npm test
+      run: npm test
