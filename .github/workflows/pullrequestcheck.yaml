@@ -1,0 +1,21 @@
+name: PullRequest-Checks
+on:
+  pull_request:
+    branches:
+      - develop
+jobs:
+  unit-testing:
+    runs-on: ubuntu-latest
+    steps:
+    - name: List files in the workspace
+      run: |
+        ls ${{ github.workspace }}
+    - name: Check out repository code
+      uses: actions/checkout@v2
+    - name: List files in the workspace
+      run: |
+        ls ${{ github.workspace }}
+    - name: Run npm test
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      run: npm start
