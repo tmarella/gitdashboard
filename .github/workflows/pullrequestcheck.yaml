@@ -17,7 +17,6 @@ jobs:
         ls ${{ github.workspace }}
     - name: Run npm install
       run: npm install
-#     - name: Run npm lint
-#       run: npm lint
-    - name: Run npm test
-      run: npm test
+    - name: lint
+      run: ng lint
+
